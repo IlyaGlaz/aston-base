@@ -16,7 +16,7 @@ import java.util.Arrays;
 import java.util.Collection;
 import java.util.Comparator;
 
-public class ArrayList<T extends Comparable<T>> {
+public class ArrayList<T extends Comparable<? super T>> {
     private static final int DEFAULT_CAPACITY = 10;
     private T[] array;
     private int capacity;
@@ -100,7 +100,7 @@ public class ArrayList<T extends Comparable<T>> {
     }
 
     public Object get(int index) {
-        if (!isIndexNormal(index)){
+        if (!isIndexNormal(index)) {
             throw new IndexOutOfBoundsException();
         }
         return array[index];
@@ -204,7 +204,7 @@ public class ArrayList<T extends Comparable<T>> {
         }
     }
 
-    public static <T extends Comparable<T>> void bubbleSort(ArrayList<T> arrayList) {
+    public static <T extends Comparable<? super T>> void bubbleSort(ArrayList<T> arrayList) {
         int lastIndex = arrayList.size - 1;
         while (lastIndex > 0) {
             boolean isSorted = true;
@@ -222,7 +222,7 @@ public class ArrayList<T extends Comparable<T>> {
     }
 
 
-    public static <T extends Comparable<T>> void bubbleSort(ArrayList<T> arrayList, Comparator<T> comparator) {
+    public static <T extends Comparable<? super T>> void bubbleSort(ArrayList<T> arrayList, Comparator<T> comparator) {
         int lastIndex = arrayList.size - 1;
         while (lastIndex > 0) {
             boolean isSorted = true;
@@ -239,7 +239,7 @@ public class ArrayList<T extends Comparable<T>> {
         }
     }
 
-    private static <T extends Comparable<T>> void swapElements(ArrayList<T> arrayList, int firstIndexElement, int secondIndexElement) {
+    private static <T extends Comparable<? super T>> void swapElements(ArrayList<T> arrayList, int firstIndexElement, int secondIndexElement) {
         T temp = arrayList.array[firstIndexElement];
         arrayList.array[firstIndexElement] = arrayList.array[secondIndexElement];
         arrayList.array[secondIndexElement] = temp;
