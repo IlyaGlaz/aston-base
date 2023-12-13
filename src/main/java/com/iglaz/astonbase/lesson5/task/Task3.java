@@ -1,5 +1,6 @@
 package com.iglaz.astonbase.lesson5.task;
 
+import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
 /**
@@ -8,6 +9,8 @@ import java.util.stream.Stream;
  */
 public class Task3 {
     public static void main(String[] args) {
-        Stream.of(1, 2, 3, 4, 5);
+        System.out.println(
+                Stream.of(1, 2, 3, 4, 5).map(v -> v * v).collect(Collectors.toList())
+        );
     }
 }
