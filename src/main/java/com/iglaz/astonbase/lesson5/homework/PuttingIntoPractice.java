@@ -41,5 +41,12 @@ public class PuttingIntoPractice {
                 .map(Trader::getName)
                 .sorted()
                 .forEach(System.out::println);
+        //4. Вернуть строку со всеми именами трейдеров, отсортированными в алфавитном
+        //порядке.
+        transactions.stream()
+                .map(x->x.getTrader().getName())
+                .distinct()
+                .sorted()
+                .forEach(System.out::println);
     }
 }
