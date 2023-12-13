@@ -4,9 +4,9 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 
-public final class Person implements Cloneable {
+public final class Person implements Cloneable, Comparable<Person> {
     String name;
-    int age;
+    Integer age;
     List<String> preferFilms = new ArrayList<>();
 
     public Person(String name, int age) {
@@ -38,7 +38,7 @@ public final class Person implements Cloneable {
         return name;
     }
 
-    public int getAge() {
+    public Integer getAge() {
         return age;
     }
 
@@ -62,7 +62,7 @@ public final class Person implements Cloneable {
 
     @Override
     public int hashCode() {
-        return Objects.hash(name, age, preferFilms);
+        return 22;
     }
 
     @Override
@@ -72,5 +72,10 @@ public final class Person implements Cloneable {
                 ", age=" + age +
                 ", preferFilms=" + preferFilms +
                 '}';
+    }
+
+    @Override
+    public int compareTo(Person o) {
+        return age.compareTo(o.age);
     }
 }
