@@ -222,7 +222,7 @@ public class ArrayList<T extends Comparable<? super T>> {
     }
 
 
-    public static <T extends Comparable<? super T>> void bubbleSort(ArrayList<T> arrayList, Comparator<T> comparator) {
+    public static <T extends Comparable<? super T>> void bubbleSort(ArrayList<T> arrayList, Comparator<? super T> comparator) {
         int lastIndex = arrayList.size - 1;
         while (lastIndex > 0) {
             boolean isSorted = true;
