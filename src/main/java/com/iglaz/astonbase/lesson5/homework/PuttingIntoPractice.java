@@ -41,6 +41,7 @@ public class PuttingIntoPractice {
                 .map(Trader::getName)
                 .sorted()
                 .forEach(System.out::println);
+
         //4. Вернуть строку со всеми именами трейдеров, отсортированными в алфавитном
         //порядке.
         transactions.stream()
@@ -48,9 +49,16 @@ public class PuttingIntoPractice {
                 .distinct()
                 .sorted()
                 .forEach(System.out::println);
+
         //5. Выяснить, существует ли хоть один трейдер из Милана.
         System.out.println(transactions.stream()
                 .anyMatch(x -> x.getTrader().getCity().equals("Milan")));
+
+        //6. Вывести суммы всех транзакций трейдеров из Кембриджа.
+        System.out.println(transactions.stream()
+                .filter(x -> x.getTrader().getCity().equals("Cambridge"))
+                .map(Transaction::getValue)
+                .reduce(Integer::sum).get());
 
     }
 }
