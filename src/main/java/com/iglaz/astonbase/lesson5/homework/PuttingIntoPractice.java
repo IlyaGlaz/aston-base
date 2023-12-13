@@ -60,5 +60,10 @@ public class PuttingIntoPractice {
                 .map(Transaction::getValue)
                 .reduce(Integer::sum).get());
 
+        //7. Какова максимальная сумма среди всех транзакций?
+        System.out.println(transactions.stream()
+                .map(Transaction::getValue)
+                .reduce(Integer::max).get());
+
     }
 }
