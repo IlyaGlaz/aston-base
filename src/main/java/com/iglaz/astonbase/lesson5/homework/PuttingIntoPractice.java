@@ -61,14 +61,13 @@ public class PuttingIntoPractice {
         System.out.println(
                 transactions.stream()
                         .map(cityTraders -> cityTraders.getTrader().getCity())
-                        .distinct()
                         .anyMatch(city -> city.equals("Milan"))
         );
 
         //6. Вывести суммы всех транзакций трейдеров из Кембриджа.
         System.out.println(
                 transactions.stream()
-                        .filter(city -> city.getTrader().getCity().equals("Cambridge"))
+                        .filter(trader -> trader.getTrader().getCity().equals("Cambridge"))
                         .map(Transaction::getValue)
                         .collect(Collectors.toList())
         );
@@ -77,7 +76,7 @@ public class PuttingIntoPractice {
         System.out.println(
                 transactions.stream()
                         .map(Transaction::getValue)
-                        .reduce(Integer::max)
+                        .max(Integer::compareTo)
         );
 
         //8. Найти транзакцию с минимальной суммой.
