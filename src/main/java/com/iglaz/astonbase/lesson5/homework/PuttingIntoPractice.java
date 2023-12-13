@@ -20,11 +20,17 @@ public class PuttingIntoPractice {
                 new Transaction(mario, 2012, 700),
                 new Transaction(alan, 2012, 950)
         );
-        //        1. Найти все транзакции за 2011 год и отсортировать их по сумме (от меньшей
-//        к большей).
+        //1. Найти все транзакции за 2011 год и отсортировать их по сумме (от меньшей
+        // к большей).
         transactions.stream()
                 .filter(x -> x.getYear() == 2011)
                 .sorted(Comparator.comparingInt(Transaction::getValue))
+                .forEach(System.out::println);
+
+        //2. Вывести список неповторяющихся городов, в которых работают трейдеры.
+        transactions.stream()
+                .map(x->x.getTrader().getCity())
+                .distinct()
                 .forEach(System.out::println);
     }
 }
