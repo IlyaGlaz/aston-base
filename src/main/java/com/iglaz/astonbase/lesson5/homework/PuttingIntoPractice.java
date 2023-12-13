@@ -32,5 +32,14 @@ public class PuttingIntoPractice {
                 .map(x->x.getTrader().getCity())
                 .distinct()
                 .forEach(System.out::println);
+
+        //3. Найти всех трейдеров из Кембриджа и отсортировать их по именам.
+        transactions.stream()
+                .map(Transaction::getTrader)
+                .distinct()
+                .filter(x->x.getCity().equals("Cambridge"))
+                .map(Trader::getName)
+                .sorted()
+                .forEach(System.out::println);
     }
 }
