@@ -65,5 +65,10 @@ public class PuttingIntoPractice {
                 .map(Transaction::getValue)
                 .reduce(Integer::max).get());
 
+        //8. Найти транзакцию с минимальной суммой.
+        System.out.println(transactions.stream()
+                .min(Comparator.comparingInt(Transaction::getValue)).get());
+
+
     }
 }
