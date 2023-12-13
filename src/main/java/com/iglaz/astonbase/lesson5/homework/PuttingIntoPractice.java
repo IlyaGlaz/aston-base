@@ -48,5 +48,9 @@ public class PuttingIntoPractice {
                 .distinct()
                 .sorted()
                 .forEach(System.out::println);
+        //5. Выяснить, существует ли хоть один трейдер из Милана.
+        System.out.println(transactions.stream()
+                .anyMatch(x -> x.getTrader().getCity().equals("Milan")));
+
     }
 }
