@@ -1,6 +1,7 @@
 package com.iglaz.astonbase.lesson5.homework;
 
 import java.util.Arrays;
+import java.util.Comparator;
 import java.util.List;
 
 public class PuttingIntoPractice {
@@ -19,5 +20,11 @@ public class PuttingIntoPractice {
                 new Transaction(mario, 2012, 700),
                 new Transaction(alan, 2012, 950)
         );
+
+        System.out.println("Все транзакции за 2011 год, отсортированные по их сумме:");
+        transactions.stream()
+                .filter(t -> t.getYear() == 2011)
+                .sorted(Comparator.comparing(Transaction::getValue))
+                .forEach(System.out::println);
     }
 }
