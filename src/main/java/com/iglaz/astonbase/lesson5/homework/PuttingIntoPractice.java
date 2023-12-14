@@ -56,5 +56,19 @@ public class PuttingIntoPractice {
                 .map(Transaction::getTrader)
                 .anyMatch(trader -> trader.getCity().equals("Milan"));
         System.out.println(isExist ? "Да." : "Нет.");
+
+        System.out.println("\nСуммы всех транзакций трейдеров из Кембриджа:");
+        /*
+        это общая сумма, так как изначально невнимательно прочитала задание :)
+
+        int sum = transactions.stream()
+                .filter(transaction -> transaction.getTrader().getCity().equals("Cambridge"))
+                .mapToInt(Transaction::getValue)
+                .sum();
+         */
+        transactions.stream()
+                .filter(transaction -> transaction.getTrader().getCity().equals("Cambridge"))
+                .mapToInt(Transaction::getValue)
+                .forEach(System.out::println);
     }
 }
