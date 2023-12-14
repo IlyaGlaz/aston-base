@@ -3,6 +3,7 @@ package com.iglaz.astonbase.lesson5.homework;
 import java.util.Arrays;
 import java.util.Comparator;
 import java.util.List;
+import java.util.stream.Collectors;
 
 public class PuttingIntoPractice {
 
@@ -41,5 +42,13 @@ public class PuttingIntoPractice {
                 .map(Trader::getName)
                 .sorted()
                 .forEach(System.out::println);
+
+        System.out.println("\nСтрока со всеми именами трейдеров, отсортированными в алфавитном порядке:");
+        String traders = transactions.stream()
+                .map(Transaction::getTrader)
+                .map(Trader::getName)
+                .sorted()
+                .collect(Collectors.joining(", "));
+        System.out.println(traders);
     }
 }
