@@ -50,5 +50,11 @@ public class PuttingIntoPractice {
                 .sorted()
                 .collect(Collectors.joining(", "));
         System.out.println(traders);
+
+        System.out.println("\nСуществует ли хоть один трейдер из Милана?");
+        boolean isExist = transactions.stream()
+                .map(Transaction::getTrader)
+                .anyMatch(trader -> trader.getCity().equals("Milan"));
+        System.out.println(isExist ? "Да." : "Нет.");
     }
 }
