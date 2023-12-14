@@ -74,5 +74,10 @@ public class PuttingIntoPractice {
         System.out.println("\nМаксимальная сумма среди всех транзакций:");
         int maxSum = transactions.stream().mapToInt(Transaction::getValue).max().getAsInt();
         System.out.println(maxSum);
+
+        System.out.println("\nТранзакция с минимальной суммой:");
+        Transaction minTransaction = transactions.stream()
+                .min(Comparator.comparing(Transaction::getValue)).get();
+        System.out.println(minTransaction);
     }
 }
