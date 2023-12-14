@@ -70,5 +70,9 @@ public class PuttingIntoPractice {
                 .filter(transaction -> transaction.getTrader().getCity().equals("Cambridge"))
                 .mapToInt(Transaction::getValue)
                 .forEach(System.out::println);
+
+        System.out.println("\nМаксимальная сумма среди всех транзакций:");
+        int maxSum = transactions.stream().mapToInt(Transaction::getValue).max().getAsInt();
+        System.out.println(maxSum);
     }
 }
