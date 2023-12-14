@@ -26,5 +26,12 @@ public class PuttingIntoPractice {
                 .filter(t -> t.getYear() == 2011)
                 .sorted(Comparator.comparing(Transaction::getValue))
                 .forEach(System.out::println);
+
+        System.out.println("\nСписок неповторяющихся городов, в которых работают трейдеры:");
+        transactions.stream()
+                .map(Transaction::getTrader)
+                .map(Trader::getCity)
+                .distinct()
+                .forEach(System.out::println);
     }
 }
