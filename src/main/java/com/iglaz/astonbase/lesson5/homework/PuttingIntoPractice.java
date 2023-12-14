@@ -33,5 +33,13 @@ public class PuttingIntoPractice {
                 .map(Trader::getCity)
                 .distinct()
                 .forEach(System.out::println);
+
+        System.out.println("\nВсе трейдеры из Кембриджа, отсортированные по именам:");
+        transactions.stream()
+                .map(Transaction::getTrader)
+                .filter(trader -> trader.getCity().equals("Cambridge"))
+                .map(Trader::getName)
+                .sorted()
+                .forEach(System.out::println);
     }
 }
