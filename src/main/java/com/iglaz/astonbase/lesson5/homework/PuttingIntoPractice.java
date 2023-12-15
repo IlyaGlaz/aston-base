@@ -3,6 +3,7 @@ package com.iglaz.astonbase.lesson5.homework;
 import java.util.Arrays;
 import java.util.Comparator;
 import java.util.List;
+import java.util.stream.Collectors;
 
 public class PuttingIntoPractice {
 
@@ -44,11 +45,11 @@ public class PuttingIntoPractice {
 
         //4. Вернуть строку со всеми именами трейдеров, отсортированными в алфавитном
         //порядке.
-        transactions.stream()
-                .map(x->x.getTrader().getName())
+        System.out.println(transactions.stream()
+                .map(x -> x.getTrader().getName())
                 .distinct()
                 .sorted()
-                .forEach(System.out::println);
+                .collect(Collectors.joining(", ")));
 
         //5. Выяснить, существует ли хоть один трейдер из Милана.
         System.out.println(transactions.stream()
