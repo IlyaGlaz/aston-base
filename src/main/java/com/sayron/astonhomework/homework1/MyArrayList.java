@@ -1,6 +1,7 @@
 package com.sayron.astonhomework.homework1;
 
 import java.util.Arrays;
+import java.util.Collection;
 
 public class MyArrayList<T> {
     private final int DEFAULT_CAPACITY = 10;
@@ -12,9 +13,11 @@ public class MyArrayList<T> {
         size = 0;
     }
 
-    public MyArrayList(T[] list) {
-        this.list = Arrays.copyOf(list, list.length);
-        size = list.length;
+    public MyArrayList(Collection<? extends T> collection) {
+        if (!collection.isEmpty()) {
+            this.list = (T[]) collection.toArray();
+            this.size = list.length;
+        }
     }
 
     public MyArrayList(int capacity) {
@@ -78,5 +81,23 @@ public class MyArrayList<T> {
 
     public int size() {
         return size;
+    }
+
+    public void bubbleSort() {
+        boolean swapped;
+        for (int i = 0; i < size - 1; i++) {
+            swapped = false;
+            for (int j = 0; j < size - i - 1; j++) {
+                if (((Comparable<T>) list[j]).compareTo(list[j + 1]) > 0) {
+                    T temp = list[j];
+                    list[j] = list[j + 1];
+                    list[j + 1] = temp;
+                    swapped = true;
+                }
+            }
+            if (!swapped) {
+                break;
+            }
+        }
     }
 }
