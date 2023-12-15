@@ -100,4 +100,25 @@ public class MyArrayList<T> {
             }
         }
     }
+
+    public static <T extends Comparable<? super T>> void sort(MyArrayList<T> collection) {
+        boolean swapped;
+        T[] list = collection.getList();
+        int size = collection.size();
+
+        for (int i = 0; i < size - 1; i++) {
+            swapped = false;
+            for (int j = 0; j < size - i - 1; j++) {
+                if (list[j].compareTo(list[j + 1]) > 0) {
+                    T temp = list[j];
+                    list[j] = list[j + 1];
+                    list[j + 1] = temp;
+                    swapped = true;
+                }
+            }
+            if (!swapped) {
+                break;
+            }
+        }
+    }
 }
