@@ -14,4 +14,8 @@ public class CollectionsDemo {
 
         someList3.get(3);
     }
+
+    //    static <T extends Comparable<? super T>> void sort(List<T> list) {
+    //
+    //    }
 }
