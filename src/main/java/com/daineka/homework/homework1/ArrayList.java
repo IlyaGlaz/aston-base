@@ -143,6 +143,7 @@ public class ArrayList<T extends Comparable<? super T>> {
         for (int i = 0; i < size; i++) {
             array[i] = null;
         }
+        this.size = 0;
         return true;
     }
 
