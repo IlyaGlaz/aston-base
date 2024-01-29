@@ -10,7 +10,7 @@ public class ReflectionApiExample {
         Class<User> userClass1 = User.class;
         System.out.println();
 //        System.out.println(userClass == userClass1);
-//        testConstructor();
+        testConstructor();
 //        testFields(user);
 //        testMethods(user);
     }
