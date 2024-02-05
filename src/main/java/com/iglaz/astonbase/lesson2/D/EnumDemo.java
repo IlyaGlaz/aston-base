@@ -4,8 +4,7 @@ import java.util.Arrays;
 
 public class EnumDemo {
     public static void main(String[] args) {
-        System.out.println(Color.RED);
-        Color.BLUE.show();
+        System.out.println(Color.RED == Color.RED);
 
         Color[] values = Color.values();
         Color red = Color.valueOf("RED");

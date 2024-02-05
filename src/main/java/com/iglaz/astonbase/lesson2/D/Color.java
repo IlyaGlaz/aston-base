@@ -1,6 +1,6 @@
 package com.iglaz.astonbase.lesson2.D;
 
-public enum Color implements Show {
+public enum Color {
     RED(255, 0, 0),
     GREEN(255, 0, 0),
     BLUE(10, 2, 2);
@@ -15,8 +15,4 @@ public enum Color implements Show {
         this.b = b;
     }
 
-    @Override
-    public void show() {
-        System.out.println("hello");
-    }
 }
