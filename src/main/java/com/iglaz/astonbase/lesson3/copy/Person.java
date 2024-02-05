@@ -4,10 +4,16 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 
-public final class Person implements Cloneable, Comparable<Person> {
+public final class Person implements Cloneable {
     String name;
     Integer age;
     List<String> preferFilms = new ArrayList<>();
+
+    public Person(Person person) {
+        this.name = person.name;
+        this.age = person.age;
+        this.preferFilms = new ArrayList<>(person.preferFilms);
+    }
 
     public Person(String name, int age) {
         this.name = name;
@@ -18,12 +24,6 @@ public final class Person implements Cloneable, Comparable<Person> {
         this.name = name;
         this.age = age;
         this.preferFilms = new ArrayList<>(list);
-    }
-
-    public Person(Person copy) {
-        name = copy.getName();
-        age = copy.getAge();
-        preferFilms = new ArrayList<>(copy.getPreferFilms());
     }
 
     public void addFilm(String film) {
@@ -43,26 +43,11 @@ public final class Person implements Cloneable, Comparable<Person> {
     }
 
     @Override
-    public Person clone() throws CloneNotSupportedException {
+    public Object clone() throws CloneNotSupportedException {
         Person clone = (Person) super.clone();
 
         clone.preferFilms = new ArrayList<>(this.preferFilms);
         return clone;
-    }
-
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-        Person person = (Person) o;
-        return age == person.age
-                && Objects.equals(name, person.name)
-                && Objects.equals(preferFilms, person.preferFilms);
-    }
-
-    @Override
-    public int hashCode() {
-        return 22;
     }
 
     @Override
@@ -72,10 +57,5 @@ public final class Person implements Cloneable, Comparable<Person> {
                 ", age=" + age +
                 ", preferFilms=" + preferFilms +
                 '}';
-    }
-
-    @Override
-    public int compareTo(Person o) {
-        return age.compareTo(o.age);
     }
 }

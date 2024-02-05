@@ -5,11 +5,15 @@ public class StringsDemo {
         String str1 = "Hello";
         String str2 = "Hello";
 
-        String hello3 = new String("Hello");
-        String hello4 = new String("Hello");
+//        System.out.println(str1 == str2);
+//
+//        String hello3 = new String("Hello");
+//        String hello4 = new String("Hello");
+//
+//        System.out.println(hello3 == hello4);
 
-        Byte int1 = 127;
-        Byte int2 = 127;
+        Long int1 = 127L;
+        Long int2 = 127L;
 
         System.out.println(int1 == int2);
 
