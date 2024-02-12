@@ -9,28 +9,29 @@ public class LambdaRunner {
     public static void main(String[] args) {
         List<Integer> list = Arrays.asList(44, 22, 55);
 
-        Comparator<Integer> comparator = (Integer i1, Integer i2) -> {
-            return Integer.compare(i2, i1);
+        Comparator<Integer> comparator = new Comparator<Integer>() {
+            @Override
+            public int compare(Integer o1, Integer o2) {
+                return Integer.compare(o1, o2);
+            }
         };
 
-//        Comparator<Integer> comparator = (Integer i1, Integer i2) -> Integer.compare(i2, i1);
+        Comparator<Integer> comparator1 = (Integer o1, Integer o2) -> {
+                return Integer.compare(o1, o2);
+        };
 
-//        Comparator<Integer> comparator = (i1, i2) -> Integer.compare(i2, i1);
+        Comparator<Integer> comparator2 = (o1, o2) -> Integer.compare(o1, o2);
 
-//        Comparator<Integer> comparator = Integer::compare;
+        Comparator<Integer> comparator3 = Integer::compare;
 
-//        System.out.println(comparator.compare(22, 11));
-
-        Collections.sort(list, comparator);
-
-        System.out.println(list);
+        Collections.sort(list, comparator1);
     }
 
 //    static class IntegerComparator implements Comparator<Integer> {
-//@Override
 //
-//       (Integer i1, Integer i2)  -> {
-//           return Integer.compare(i2, i1);
+//        @Override
+//        public int compare(Integer o1, Integer o2) {
+//            return Integer.compare(o1, o2);
 //        }
 //    }
 }

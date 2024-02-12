@@ -9,9 +9,9 @@ public class GenericsDemo {
 //
 //        String o = (String) anyList.get(1);
 //        o.length();
-
+//
 //        anyList.add(22);
-
+//
         GenList<Integer> intList = new GenList<>(22);
         intList.add(22);
 

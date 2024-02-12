@@ -26,10 +26,11 @@ public class StreamRunner {
         // 3.Добавить элементы в List
         List<Dish> menu = Dish.menu;
 
-        Set<String> set = menu.stream()
+        List<String> collect = menu.stream()
                 .filter((Dish dish) -> dish.getCalories() < 400)
                 .map((Dish dish) -> dish.getName())
-                .collect(Collectors.toSet());
+                .sorted()
+                .collect(Collectors.toList());
 
         // Optional
         Optional<Integer> optional = menu.stream()
@@ -45,4 +46,6 @@ public class StreamRunner {
 //
 //        optional.ifPresent(integer -> System.out.println(integer));
     }
+
+
 }

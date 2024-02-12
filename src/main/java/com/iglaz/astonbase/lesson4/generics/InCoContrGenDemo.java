@@ -14,19 +14,26 @@ public class InCoContrGenDemo {
 
         // Ковариантность List
         List<Integer> intList = new ArrayList<>();
-        List<? extends Number> numList = new ArrayList<>();
-        numList = intList;
+        List<Double> dubList = new ArrayList<>();
+        List<? extends Number> numList = intList;
+        numList = dubList;
+
+        for (Number d :
+                numList) {
+            System.out.println(d.longValue());
+        }
 
         // Контравариантность List
-        List<Object> objList1 = new ArrayList<>();
+        List<Number> objList1 = new ArrayList<>();
         List<? super Number> numList1 = new ArrayList<>();
         numList1 = objList1;
 
         // Инвариантность
         List<String> strList = new ArrayList<>();
-        List<Object> objList = new ArrayList<>();
 
 //        PECS
 
+        List<Object> integer = List.of(new Object());
+        List<Number> numbers = new ArrayList<>();
     }
 }
