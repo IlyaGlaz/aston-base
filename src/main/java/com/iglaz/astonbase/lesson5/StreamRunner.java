@@ -1,9 +1,12 @@
 package com.iglaz.astonbase.lesson5;
 
+import java.lang.reflect.Array;
+import java.util.Arrays;
 import java.util.List;
 import java.util.Optional;
 import java.util.Set;
 import java.util.stream.Collectors;
+import java.util.stream.IntStream;
 import java.util.stream.Stream;
 
 public class StreamRunner {
@@ -26,11 +29,17 @@ public class StreamRunner {
         // 3.Добавить элементы в List
         List<Dish> menu = Dish.menu;
 
-        List<String> collect = menu.stream()
-                .filter((Dish dish) -> dish.getCalories() < 400)
-                .map((Dish dish) -> dish.getName())
-                .sorted()
-                .collect(Collectors.toList());
+        IntStream.of(23, 43, 234);
+
+//        Arrays.stream(new int[]{23, 234, 234})
+//                .collect(Collectors.toList());
+
+//        List<String> collect = menu.stream()
+//                .limit(10)
+//                .filter((Dish dish) -> dish.getCalories() < 400)
+//                .mapToInt(Dish::getCalories)
+//                .sorted()
+//                .collect(Collectors.toList());
 
         // Optional
         Optional<Integer> optional = menu.stream()

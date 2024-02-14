@@ -11,8 +11,8 @@ public class SerializationDemo {
 
     public static void main(String[] args) throws IOException, ClassNotFoundException {
         Path path = Path.of("resources", "student.out");
-
-        writeObject(path);
+//
+//        writeObject(path);
         try (ObjectInputStream objectInputStream = new ObjectInputStream(new FileInputStream(path.toFile()))) {
 
             Object object = objectInputStream.readObject();

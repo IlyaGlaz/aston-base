@@ -17,7 +17,7 @@ public class InputStreamRunner {
             int counter = 0;
             byte currentByte;
             while ((currentByte = (byte) inputStream.read()) != -1) {
-                bytes[counter++] = currentByte;
+//                bytes[counter++] = currentByte;
             }
 
             String stringValue = new String(bytes);

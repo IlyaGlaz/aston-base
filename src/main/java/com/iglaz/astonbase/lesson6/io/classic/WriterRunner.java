@@ -12,6 +12,8 @@ public class WriterRunner {
     public static void main(String[] args) throws IOException {
         Path path = Path.of("resources", "text2.txt");
 
+        System.out.println();
+
         try (BufferedWriter fileWriter = Files.newBufferedWriter(path)) {
             fileWriter.append("Hello World!");
             fileWriter.newLine();
