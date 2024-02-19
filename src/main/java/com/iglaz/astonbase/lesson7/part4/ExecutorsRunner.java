@@ -12,28 +12,16 @@ public class ExecutorsRunner {
         ExecutorService executorService2 = Executors.newCachedThreadPool();
         ExecutorService executorService3 = Executors.newWorkStealingPool();
 
-        Future<?> submit = executorService.submit(() -> {
-            try {
-                Thread.sleep(5000);
-
-            } catch (InterruptedException e) {
-                throw new RuntimeException(e);
-            }
-            return 222;
+        Future<Integer> submit = executorService.submit(() -> {
+            Thread.sleep(4000);
+            return 22 * 22;
         });
 
         if (submit.isDone()) {
             System.out.println(submit.get());
         }
 
-        executorService.submit(() -> System.out.println(Thread.currentThread().getName()));
-        executorService.submit(() -> System.out.println(Thread.currentThread().getName()));
-        executorService.submit(() -> System.out.println(Thread.currentThread().getName()));
-        executorService.submit(() -> System.out.println(Thread.currentThread().getName()));
-        executorService.submit(() -> System.out.println(Thread.currentThread().getName()));
-        executorService.submit(() -> System.out.println(Thread.currentThread().getName()));
-        executorService.submit(() -> System.out.println(Thread.currentThread().getName()));
-
         executorService.shutdown();
+        System.out.println("Конец");
     }
 }

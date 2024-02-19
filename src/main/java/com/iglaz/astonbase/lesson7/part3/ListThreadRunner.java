@@ -1,12 +1,8 @@
 package com.iglaz.astonbase.lesson7.part3;
 
-import org.w3c.dom.css.Counter;
-
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
-import java.util.concurrent.ArrayBlockingQueue;
-import java.util.concurrent.BlockingQueue;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.CopyOnWriteArrayList;
 
@@ -17,7 +13,7 @@ public class ListThreadRunner {
     public static void main(String[] args) throws InterruptedException {
         List<Integer> numbers = new CopyOnWriteArrayList<>();
 
-        Map<Integer, Integer> map = new ConcurrentHashMap<>();
+        Map<Integer, Integer> mapSome = new ConcurrentHashMap<>();
 
         ListThread listThread1 = new ListThread(numbers);
         ListThread listThread2 = new ListThread(numbers);

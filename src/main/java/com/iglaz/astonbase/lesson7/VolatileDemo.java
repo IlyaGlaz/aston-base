@@ -5,7 +5,11 @@ public class VolatileDemo {
     /**
      * [RAM    flag=true]
      *
-     * 1 ------
+     * 1 ------- true -----> false
+     *
+     * 2 -------                   -------> flag.isTrue?
+     *
+     * 3 -------
      */
     private static volatile boolean flag = false;
 
