@@ -11,13 +11,5 @@ public class FirstDemo {
         System.out.println(DriverManager.class.getClassLoader());
 
         System.out.println(FirstDemo.class.getClassLoader());
-
-        System.out.println(FirstDemo.class.getClassLoader());
-
-        System.out.println(FirstDemo.class.getClassLoader());
-
-        System.out.println(FirstDemo.class.getClassLoader());
-
-        System.out.println(FirstDemo.class.getClassLoader());
     }
 }
