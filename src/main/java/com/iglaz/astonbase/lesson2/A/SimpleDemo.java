@@ -8,6 +8,9 @@ import java.util.concurrent.Executors;
 public class SimpleDemo {
     public static void main(String[] args) {
         Circle circle = new Circle(100);
+        Circle circle2 = new Circle(100);
+        Circle circle3 = new Circle(100);
+        Circle circle4 = new Circle(100);
 
         String str = "Hello";
         Integer num = 22;
