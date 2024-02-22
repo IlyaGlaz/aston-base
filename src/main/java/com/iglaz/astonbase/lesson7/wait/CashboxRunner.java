@@ -4,7 +4,8 @@ import java.util.ArrayDeque;
 import java.util.List;
 import java.util.Queue;
 
-public class CashboxRunner {
+public class
+CashboxRunner {
 
     public static void main(String[] args) throws InterruptedException {
         Queue<Cashbox> cashboxes = new ArrayDeque<>(List.of(new Cashbox(), new Cashbox()));
