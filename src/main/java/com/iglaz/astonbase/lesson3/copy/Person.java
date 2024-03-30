@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 
-public final class Person implements Cloneable, Comparable<Person> {
+public class Person implements Cloneable, Comparable<Person> {
     String name;
     Integer age;
     List<String> preferFilms = new ArrayList<>();
@@ -43,7 +43,7 @@ public final class Person implements Cloneable, Comparable<Person> {
     }
 
     @Override
-    public Object clone() throws CloneNotSupportedException {
+    protected Person clone() throws CloneNotSupportedException {
         Person clone = (Person) super.clone();
 
         clone.preferFilms = new ArrayList<>(this.preferFilms);
@@ -57,6 +57,21 @@ public final class Person implements Cloneable, Comparable<Person> {
                 ", age=" + age +
                 ", preferFilms=" + preferFilms +
                 '}';
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Person person = (Person) o;
+        return Objects.equals(name, person.name)
+                && Objects.equals(age, person.age)
+                && Objects.equals(preferFilms, person.preferFilms);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(name, age, preferFilms);
     }
 
     @Override

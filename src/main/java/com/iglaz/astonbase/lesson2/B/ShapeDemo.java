@@ -20,7 +20,7 @@ public class ShapeDemo {
     static void shapeArray() {
         Shape[] shapes = new Shape[3];
 
-        shapes[0] = new Circle(2.0);
+//        shapes[0] = new Circle(2.0);
         shapes[1] = new Rectangle(1.0, 3.0);
         shapes[2] = new Rectangle(4.0, 2.0);
         double totalArea = 0;

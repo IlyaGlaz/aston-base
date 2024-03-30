@@ -6,18 +6,18 @@ import java.util.List;
 public final class Person {
     private final String name;
     private final Integer age;
-    List<String> preferFilms = new ArrayList<>();
+    private final List<String> preferFilms = new ArrayList<>();
 
     public Person(String name, int age) {
         this.name = name;
         this.age = age;
     }
 
-    public Person(String name, int age, List<String> list) {
-        this.name = name;
-        this.age = age;
-        this.preferFilms = List.copyOf(list);
-    }
+//    public Person(String name, int age, List<String> list) {
+//        this.name = name;
+//        this.age = age;
+//        this.preferFilms = List.copyOf(list);
+//    }
 
     public void addFilm(String film) {
         preferFilms.add(film);

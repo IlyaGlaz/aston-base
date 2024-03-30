@@ -1,6 +1,6 @@
 package com.iglaz.astonbase.lesson2.B;
 
-public class Circle extends Shape {
+public class Circle extends Object  {
     public static final double PI = 3.14159;
     protected double r;
 

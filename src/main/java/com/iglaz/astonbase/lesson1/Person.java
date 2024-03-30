@@ -1,28 +1,38 @@
 package com.iglaz.astonbase.lesson1;
-
-import java.util.Objects;
+import java.util.ArrayList;
 
 class Person {
-    final static String NAME = "someName";
-
+    Manager manager;
     int age;
     String name;
+    final ArrayList<String> str = new ArrayList<>();
 
     public Person(int age, String name) {
         this.age = age;
         this.name = name;
     }
 
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-        Person person = (Person) o;
-        return Objects.equals(name, person.name);
+    public void work() {
+        manager.work();
     }
 
-    @Override
-    public int hashCode() {
-        return Objects.hash(name);
+    public void work(long num) {
+        manager.work();
+    }
+
+    public double work(long num, String str) {
+        manager.work();
+        return 2.2;
+    }
+
+    public void work(boolean some) {
+        System.out.println("sdfa");
+
+        manager.work();
+    }
+
+    public void sleep() {
+
     }
 }
+

@@ -1,6 +1,8 @@
 package com.iglaz.astonbase.lesson6.io;
 
+import java.io.BufferedInputStream;
 import java.io.File;
+import java.io.FileInputStream;
 import java.io.IOException;
 
 public class FileRunner {
@@ -18,5 +20,7 @@ public class FileRunner {
 
         File dir = new File("resource/test/text");
         System.out.println(dir.mkdirs());
+
+        BufferedInputStream str = new BufferedInputStream(new FileInputStream(new File("str")));
     }
 }

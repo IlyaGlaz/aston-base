@@ -7,10 +7,16 @@ public class CloneDemo {
 
         System.out.println(ivan);
 
-        Person clonePerson = (Person) ivan.clone();
+        Person clonePerson = ivan.clone();
+        System.out.println(ivan.equals(clonePerson));
         clonePerson.addFilm("someFilm");
 
         System.out.println(clonePerson);
         System.out.println(ivan);
+
+
+        Child sadf = new Child("sadf", 23);
+        Person clone = sadf.clone();
+
     }
 }

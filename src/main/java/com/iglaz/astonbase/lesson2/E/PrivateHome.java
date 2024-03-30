@@ -2,16 +2,17 @@ package com.iglaz.astonbase.lesson2.E;
 
 public class PrivateHome {
     private static String str;
-    public String greeting = "Hi"; // Outer class instance variable
 
     private void print() {
-        System.out.println("");
+        Room room = new Room();
     }
 
     static class Room { // nested class declaration
         public int repeat = 3;
 
         public void enter() {
+            System.out.println(str);
+            System.out.println();
 
             PrivateHome privateHome = new PrivateHome();
             privateHome.print();
@@ -19,5 +20,7 @@ public class PrivateHome {
                 System.out.println(str);
             }
         }
+
+
     }
 }
