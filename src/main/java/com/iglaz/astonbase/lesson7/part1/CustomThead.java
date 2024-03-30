@@ -1,9 +1,14 @@
 package com.iglaz.astonbase.lesson7.part1;
 
+import java.util.Random;
+
 public class CustomThead extends Thread {
+    private final Random random = new Random();
 
     @Override
     public void run() {
-        System.out.println("Hello " + getName());
+        for (int i = 0; i < 50; i++) {
+            System.out.println(random.nextInt(10));
+        }
     }
 }
