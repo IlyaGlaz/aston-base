@@ -1,6 +1,7 @@
 package com.iglaz.astonbase.lesson2.D;
 
 import java.util.Arrays;
+import java.util.Map;
 
 public class EnumDemo {
     public static void main(String[] args) {

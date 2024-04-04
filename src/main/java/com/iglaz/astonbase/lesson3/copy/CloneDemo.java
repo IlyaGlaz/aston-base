@@ -18,5 +18,7 @@ public class CloneDemo {
         Child sadf = new Child("sadf", 23);
         Person clone = sadf.clone();
 
+        System.out.println(ivan.hashCode());
+
     }
 }
