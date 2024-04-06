@@ -3,6 +3,7 @@ package com.iglaz.astonbase.lesson6.exceptions;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
+import java.io.IOException;
 
 public class ExceptionRunner2 {
     public static void main(String[] args) {
@@ -28,8 +29,10 @@ public class ExceptionRunner2 {
         try {
             dangerMethod();
             System.out.println("sdfffd");
-        } catch(InterruptedException | FileNotFoundException ex) {
-            ex.getLocalizedMessage();
+
+        } catch (InterruptedException | FileNotFoundException ex) {
+            throw new RuntimeException(ex);
+        } catch (Exception e) {
 
         } finally {
 
@@ -43,7 +46,6 @@ public class ExceptionRunner2 {
         Thread.sleep(2000);
 
         FileInputStream res = new FileInputStream(new File("res"));
-
 
     }
 }

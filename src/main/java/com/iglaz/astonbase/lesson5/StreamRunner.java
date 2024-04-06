@@ -5,6 +5,7 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.Optional;
 import java.util.Set;
+import java.util.function.Function;
 import java.util.stream.Collectors;
 import java.util.stream.IntStream;
 import java.util.stream.Stream;
@@ -12,7 +13,7 @@ import java.util.stream.Stream;
 public class StreamRunner {
     public static void main(String[] args) {
         Stream.of("Hello", "My name");
-        List<Integer> integers = List.of(22, 44, 44,  145, 250);
+        List<Integer> integers = List.of(22, 44, 44, 145, 250);
 
         List<String> strings = List.of("Ivan", "Alice", "Alice", "Bilbo", "Frodo");
 
@@ -42,19 +43,29 @@ public class StreamRunner {
 //                .collect(Collectors.toList());
 
         // Optional
-        Optional<Integer> optional = menu.stream()
-                .filter((Dish dish) -> dish.getCalories() < 400)
-                .map(dish -> dish.getCalories())
-                .reduce(Integer::sum);
+        Function<Dish, Integer> func = dish -> {
+            return dish.getCalories();
+        };
 
-        System.out.println(optional.get());
+//        func.apply(new Dish());
+
+        menu.stream()
+                .filter((Dish dish) -> dish.getCalories() < 400)
+                .map(StreamRunner::getCalor)
+                .forEach(elem -> System.out.println(elem));
+
+    }
+
+    static Integer getCalor(Dish dish) {
+        return dish.getCalories();
+    }
+
 
 //        System.out.println(optional.orElseThrow(() -> new UserNotFoundException()));
 //        System.out.println(optional.isPresent());
 //        System.out.println(optional.get());
 //
 //        optional.ifPresent(integer -> System.out.println(integer));
-    }
 
 
 }

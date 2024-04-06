@@ -74,6 +74,6 @@ public class Person implements Cloneable, Comparable<Person> {
 
     @Override
     public int compareTo(Person o) {
-        return o.age - age;
+        return age - o.age;
     }
 }

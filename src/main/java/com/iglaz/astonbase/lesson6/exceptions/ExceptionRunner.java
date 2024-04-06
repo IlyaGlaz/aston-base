@@ -1,39 +1,26 @@
 package com.iglaz.astonbase.lesson6.exceptions;
 
-import java.io.FileInputStream;
-import java.io.FileNotFoundException;
-import java.io.FileOutputStream;
 import java.io.IOException;
-import java.io.OutputStream;
-import java.nio.file.Path;
 import java.sql.SQLDataException;
+import java.util.ArrayList;
+import java.util.List;
 
 public class ExceptionRunner {
     public static void main(String[] args) {
-        System.out.println("Welcome to program");
+        System.out.println("Befro");
 
-        notSafeDeletion1(0);
+        List<String> str = new ArrayList<>();
 
-        try (FileInputStream fileInputStream = new FileInputStream(Path.of("").toFile());
-             FileOutputStream outputStream = new FileOutputStream(Path.of("").toFile())) {
+        try {
+            str.get(10);
 
-            dangerMethod();
-            System.out.println("Внутри метода");
-
-            fileInputStream.read();
-
-        } catch (FileNotFoundException e) {
-            throw new RuntimeException(e);
-        } catch (IOException e) {
-            throw new RuntimeException(e);
-        } catch (SQLDataException e) {
-            throw new RuntimeException(e);
+            System.out.println("After");
+        } catch(IndexOutOfBoundsException e) {
+            System.out.println(e.getLocalizedMessage());
         }
 
-        System.out.println("After deletion");
-        System.out.println("After deletion");
-        System.out.println("After deletion");
-        System.out.println("After deletion");
+
+        System.out.println("After");
     }
 
     static void notSafeDeletion1(int number) {

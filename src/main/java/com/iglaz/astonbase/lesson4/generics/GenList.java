@@ -1,5 +1,6 @@
 package com.iglaz.astonbase.lesson4.generics;
 
+import java.util.Collection;
 import java.util.List;
 
 public class GenList<T extends Comparable<T>>{
@@ -24,6 +25,10 @@ public class GenList<T extends Comparable<T>>{
     }
 
     public void putOtherList(List<T> other) {
+
+    }
+
+    static void sort(Collection<? extends Comparable<?>> collection) {
 
     }
 
