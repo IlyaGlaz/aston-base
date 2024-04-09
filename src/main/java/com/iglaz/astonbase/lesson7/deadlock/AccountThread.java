@@ -18,6 +18,7 @@ public class AccountThread extends Thread {
     @Override
     public void run() {
         for (int i = 0; i < 100; i++) {
+//            lockAccounts();
             synchronized (accountFrom) {
                 synchronized (accountTo) {
                     if (accountFrom.takeOff(10)) {
@@ -27,4 +28,20 @@ public class AccountThread extends Thread {
             }
         }
     }
+
+//    private void lockAccounts() {
+//        while (true) {
+//            boolean fromLockResult = accountFrom.getLock().tryLock();
+//            boolean toLockResult = accountTo.getLock().tryLock();
+//            if (fromLockResult && toLockResult) {
+//                break;
+//            }
+//            if (fromLockResult) {
+//                accountFrom.getLock().unlock();
+//            }
+//            if (toLockResult) {
+//                accountTo.getLock().unlock();
+//            }
+//        }
+//    }
 }

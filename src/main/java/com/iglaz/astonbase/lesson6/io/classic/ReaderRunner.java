@@ -22,6 +22,5 @@ public class ReaderRunner {
         if (input.hasNextInt()) {
             int number = input.nextInt();
         }
-
     }
 }

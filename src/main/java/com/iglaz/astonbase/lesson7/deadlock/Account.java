@@ -1,8 +1,12 @@
 package com.iglaz.astonbase.lesson7.deadlock;
 
+import java.util.concurrent.locks.Lock;
+import java.util.concurrent.locks.ReentrantLock;
+
 public class Account {
 
     private static int generator = 1;
+//    private final Lock lock = new ReentrantLock();
     private int id;
     private int money;
 
@@ -22,6 +26,10 @@ public class Account {
         }
         return false;
     }
+
+//    public Lock getLock() {
+//        return lock;
+//    }
 
     @Override
     public String toString() {

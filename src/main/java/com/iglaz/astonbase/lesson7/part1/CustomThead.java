@@ -8,7 +8,7 @@ public class CustomThead extends Thread {
     @Override
     public void run() {
         for (int i = 0; i < 50; i++) {
-            System.out.println(random.nextInt(10));
+            System.out.println(getName() + " " + random.nextInt(10));
         }
     }
 }

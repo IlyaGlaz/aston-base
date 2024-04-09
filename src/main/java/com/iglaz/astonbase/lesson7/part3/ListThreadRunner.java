@@ -11,8 +11,8 @@ import java.util.concurrent.CopyOnWriteArrayList;
  */
 public class ListThreadRunner {
     public static void main(String[] args) throws InterruptedException {
-        List<Integer> numbers = new CopyOnWriteArrayList<>();
-
+        List<Integer> numbers = new CopyOnWriteArrayList<Integer>();
+//
 //        Map<Integer, Integer> mapSome = new ConcurrentHashMap<>();
 
         ListThread listThread1 = new ListThread(numbers);
@@ -45,21 +45,21 @@ public class ListThreadRunner {
         listThread13.start();
         listThread14.start();
 
-//        listThread1.join();
-//        listThread2.join();
-//        listThread3.join();
-//        listThread4.join();
-//        listThread5.join();
-//        listThread6.join();
-//        listThread7.join();
-//        listThread8.join();
-//        listThread9.join();
-//        listThread10.join();
-//        listThread11.join();
-//        listThread12.join();
-//        listThread13.join();
-//        listThread14.join();
+        listThread1.join();
+        listThread2.join();
+        listThread3.join();
+        listThread4.join();
+        listThread5.join();
+        listThread6.join();
+        listThread7.join();
+        listThread8.join();
+        listThread9.join();
+        listThread10.join();
+        listThread11.join();
+        listThread12.join();
+        listThread13.join();
+        listThread14.join();
 //
-//        System.out.println(numbers);
+        System.out.println(numbers);
     }
 }
