@@ -11,9 +11,9 @@ public class RunnableRunner {
             }
         };
 
-        Thread thread1 = new Thread(runnable);
-        Thread thread2 = new Thread(runnable);
-        Thread thread3 = new Thread(runnable);
+        Thread thread1 = new Thread(customRunnable);
+        Thread thread2 = new Thread(customRunnable);
+        Thread thread3 = new Thread(customRunnable);
         Thread thread4 = new Thread(() -> System.out.println("Hello"));
 
         thread1.start();

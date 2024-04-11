@@ -17,13 +17,18 @@ public class AccountThread extends Thread {
      */
     @Override
     public void run() {
-        for (int i = 0; i < 100; i++) {
 //            lockAccounts();
+        for (int i = 0; i < 1000; i++) {
             synchronized (accountFrom) {
                 synchronized (accountTo) {
+//                    try {
                     if (accountFrom.takeOff(10)) {
                         accountTo.add(10);
                     }
+//                    } finally {
+//                        accountFrom.getLock().unlock();
+//                        accountTo.getLock().unlock();
+//                    }
                 }
             }
         }

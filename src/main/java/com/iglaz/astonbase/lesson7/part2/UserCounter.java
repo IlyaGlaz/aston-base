@@ -10,7 +10,7 @@ import java.util.concurrent.atomic.AtomicInteger;
 public class UserCounter {
     private AtomicInteger counter = new AtomicInteger(0);
 
-    synchronized void increment() {
+     void increment() {
         counter.incrementAndGet();
     }
 
