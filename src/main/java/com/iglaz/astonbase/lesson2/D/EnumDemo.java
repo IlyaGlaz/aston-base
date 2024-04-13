@@ -13,7 +13,5 @@ public class EnumDemo {
 
         System.out.println(Arrays.toString(values));
 
-        int[] number = {2, 3, 4};
-
     }
 }
