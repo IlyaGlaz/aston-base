@@ -1,9 +1,14 @@
-package com.iglaz.astonbase.lesson1;
+package com.iglaz.astonbase.lesson1.stack;
+
+import com.iglaz.astonbase.lesson1.structure.Person;
+
+import java.security.Permission;
 
 public class StackRunner {
     public static void main(String[] args) {
         System.out.println("Start");
         func1();
+        Person person = new Person();
 
         System.out.println("Program finish");
     }

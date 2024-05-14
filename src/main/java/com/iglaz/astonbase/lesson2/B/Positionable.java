@@ -6,4 +6,8 @@ public interface Positionable {
     double getX();
 
     double getY();
+
+    default void simple() {
+        System.out.println();
+    }
 }
