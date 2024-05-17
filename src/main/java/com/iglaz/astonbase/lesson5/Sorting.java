@@ -1,8 +1,7 @@
 package com.iglaz.astonbase.lesson5;
 
-import com.iglaz.astonbase.lesson3.copy.Person;
+import com.iglaz.astonbase.lesson2.copy.Person;
 
-import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;

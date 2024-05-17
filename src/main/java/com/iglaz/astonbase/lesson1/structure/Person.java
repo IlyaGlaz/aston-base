@@ -1,11 +1,15 @@
 package com.iglaz.astonbase.lesson1.structure;
 
 public class Person {
-    protected int age;
-    String name;
+    private int age;
+    private String name;
 
-    public Person() {
+    {
+        System.out.println("Instance block");
+    }
 
+    static {
+        System.out.println("Static block");
     }
 
     public Person(int age, String name) {
@@ -13,8 +17,28 @@ public class Person {
         this.name = name;
     }
 
-    public void sayHello() {
+    public Person() {
+        this(0, "Ivan");
+    }
+
+    static void sayHello() {
         System.out.println("Hey, my name is...");
+    }
+
+    void sayHello(String str) {
+        System.out.println("Hey, my name is..." + str);
+    }
+
+    void sayHello(int str) {
+        System.out.println("Hey, my name is..." + str);
+    }
+
+    void sayHello(int str, String str2) {
+        System.out.println("Hey, my name is..." + str);
+    }
+
+    void sayHello(String str, int str2) {
+        System.out.println("Hey, my name is..." + str);
     }
 
     protected int getAge() {
@@ -22,7 +46,14 @@ public class Person {
     }
 
     public void setAge(int age) {
-        this.age = age;
+        if (age > 0) {
+            this.age = age;
+        } else {
+            throw new IllegalArgumentException();
+        }
+    }
+
+    static int meet(Person person, Person person12) {
+        return person.getAge() + person12.getAge();
     }
 }
-
