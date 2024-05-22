@@ -1,4 +1,4 @@
-package com.iglaz.astonbase.lesson3.group2.abstact;
+package com.iglaz.astonbase.lesson3.A;
 
 public abstract class Animal {
     private int weight;
