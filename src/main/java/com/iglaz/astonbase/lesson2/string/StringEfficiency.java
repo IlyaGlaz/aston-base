@@ -4,9 +4,9 @@ public class StringEfficiency {
     public static void main(String[] args) {
         long startTime = System.currentTimeMillis();
 
-        String result = "";
-        for (int i = 0; i < 10_000; i++) {
-            result += i;
+        StringBuilder result = new StringBuilder();
+        for (int i = 0; i < 1000_000; i++) {
+            result.append(i);
         }
 
         long finishTime = System.currentTimeMillis();

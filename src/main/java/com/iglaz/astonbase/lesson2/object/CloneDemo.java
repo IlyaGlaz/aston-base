@@ -1,5 +1,7 @@
 package com.iglaz.astonbase.lesson2.object;
 
+import java.util.Arrays;
+import java.util.Collections;
 import java.util.List;
 
 public class CloneDemo {
@@ -21,5 +23,11 @@ public class CloneDemo {
 
         List<String> films = ivan.getFilms();
         films.add("asdfa");
+
+        List<Client> list = Arrays.asList(new Client("Ivanov", 45), new Client("Petronv", 11));
+
+        Collections.sort(list);
+
+        System.out.println(list);
     }
 }

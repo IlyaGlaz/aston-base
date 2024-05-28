@@ -20,7 +20,5 @@ public class PrivateHome {
                 System.out.println(str);
             }
         }
-
-
     }
 }

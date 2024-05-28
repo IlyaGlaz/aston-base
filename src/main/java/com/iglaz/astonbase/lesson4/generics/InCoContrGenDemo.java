@@ -17,7 +17,7 @@ public class InCoContrGenDemo {
         // Ковариантность List
         List<Integer> intList = new ArrayList<>();
         List<Double> dubList = new ArrayList<>();
-        List<? extends Number> numList = intList;
+        List<? extends Number> numList = dubList;
 
         for (Number d :
                 numList) {
@@ -31,10 +31,20 @@ public class InCoContrGenDemo {
 
         // Инвариантность
         List<String> strList = new ArrayList<>();
-
+        List<String> objList = new ArrayList<>();
+        objList = strList;
+//
 //        PECS
 
-        List<Object> integer = List.of(new Object());
-        List<Number> numbers = new ArrayList<>();
+//        List<Object> integer = List.of(new Object());
+//        List<Number> numbers = new ArrayList<>();
+
+        List<Double> str = new ArrayList<>();
+
+        someTest(str);
+    }
+
+    static void someTest(List<? extends Number> list) {
+        System.out.println();
     }
 }

@@ -1,28 +1,44 @@
 package com.iglaz.astonbase.lesson3.D;
 
-public enum Color implements SomeInter {
-    RED(255, 0, 0) {
+import com.iglaz.astonbase.lesson3.A.Predator;
+
+public enum Color implements Predator {
+    GREEN(22, 23, 234) {
         @Override
-        public void someMeth() {
+        public void hunt() {
+            super.hunt();
+        }
+
+        @Override
+        void doSomthing() {
+            simple();
+        }
+
+        public void simple() {
 
         }
     },
-    GREEN(255, 0, 0) {
+    BLUE(23, 234, 234) {
         @Override
-        public void someMeth() {
+        public void hunt() {
+
+        }
+
+        @Override
+        void doSomthing() {
 
         }
     },
-    BLUE(10, 2, 2) {
+    RED(23, 234, 0) {
         @Override
-        public void someMeth() {
+        void doSomthing() {
 
         }
     };
 
-    final int r;
-    final int g;
-    final int b;
+    private final int r;
+    private final int g;
+    private final int b;
 
     Color(int r, int g, int b) {
         this.r = r;
@@ -34,12 +50,18 @@ public enum Color implements SomeInter {
         return r;
     }
 
-    public int getG() {
-        return g;
-    }
-
     public int getB() {
         return b;
     }
 
+    public int getG() {
+        return g;
+    }
+
+    @Override
+    public void hunt() {
+
+    }
+
+    abstract void doSomthing();
 }

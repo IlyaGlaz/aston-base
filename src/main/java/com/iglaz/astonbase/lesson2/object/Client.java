@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 
-public final class Client implements Cloneable {
+public final class Client implements Cloneable, Comparable<Client> {
     private final String name;
     private final Integer age;
     private List<String> films = new ArrayList<>();
@@ -70,5 +70,10 @@ public final class Client implements Cloneable {
         clone.films = new ArrayList<>(this.films);
 
         return clone;
+    }
+
+    @Override
+    public int compareTo(Client o) {
+        return age - o.age;
     }
 }

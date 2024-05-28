@@ -1,34 +1,28 @@
 package com.iglaz.astonbase.lesson4;
 
+import com.iglaz.astonbase.lesson3.A.Predator;
+
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.Comparator;
 import java.util.LinkedList;
 import java.util.List;
+import java.util.function.Predicate;
 
 public class Anonimus {
     public static void main(String[] args) {
-        class MyComparator implements Comparator<Integer> {
+        class SomeClass {
 
-            @Override
-            public int compare(Integer o1, Integer o2) {
-                return 0;
-            }
         }
 
-        List<Integer> list = Arrays.asList(2, 4, 44, 66);
-        Collections.sort(list,
+        SomeClass someClass = new SomeClass();
 
-                new Comparator<Integer>() {
+        Predator predator = new Predator() {
             @Override
-            public int compare(Integer o1, Integer o2) {
-                return 0;
+            public void hunt() {
+                System.out.println("");
             }
-        });
-
-        LinkedList<String> strings = new LinkedList<>();
-        strings.get(10);
-
+        };
     }
 }
