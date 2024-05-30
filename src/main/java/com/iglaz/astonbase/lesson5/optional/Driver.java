@@ -1,7 +1,7 @@
 package com.iglaz.astonbase.lesson5.optional;
 
 public class Driver {
-    private License license = null;
+    private License license;
 
     public License getLicense() {
         return license;

@@ -5,30 +5,37 @@ import java.util.Optional;
 public class OptionalDemo {
     public static void main(String[] args) {
         Driver driver = new Driver();
+//
+//        System.out.println(driver.getLicense().getCar());
 
-        Car car = Optional.ofNullable(driver.getLicense())
+        Car car = Optional.of(driver)
+                .map(Driver::getLicense)
                 .map(License::getCar)
                 .orElse(new Car());
 
-        Car car2 = Optional.ofNullable(driver.getLicense())
+        Optional.of(driver)
+                .map(Driver::getLicense)
+                .map(License::getCar)
+                .orElseThrow();
+
+        Optional.of(driver)
+                .map(Driver::getLicense)
                 .map(License::getCar)
                 .orElseGet(() -> new Car());
 
-//        Car car3 = Optional.ofNullable(driver.getLicense())
-//                .map(License::getCar)
-//                .orElseThrow();
-//
-        Optional.ofNullable(driver.getLicense())
+        Optional.of(driver)
+                .map(Driver::getLicense)
                 .map(License::getCar)
-                .ifPresent(carcar -> carcar.setModel("Benz"));
+                .ifPresent(x -> car.setModel("sdr"));
 
-//        if (mayberCar.isPresent()) {
-//            mayberCar.get();
+        System.out.println(car);
+
+//        if (maybeLicense.isPresent()) {
+//            System.out.println(maybeLicense.get().getCar());
 //        }
 
 //        if (driver.getLicense() != null) {
 //            System.out.println(driver.getLicense().getCar());
 //        }
-
     }
 }
