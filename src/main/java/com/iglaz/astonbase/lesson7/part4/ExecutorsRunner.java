@@ -7,7 +7,7 @@ import java.util.concurrent.Future;
 
 public class ExecutorsRunner {
     public static void main(String[] args) throws ExecutionException, InterruptedException {
-        ExecutorService executorService = Executors.newFixedThreadPool(4);
+        ExecutorService executorService = Executors.newFixedThreadPool(200);
 //        ExecutorService executorService1 = Executors.newSingleThreadExecutor();
 //        ExecutorService executorService2 = Executors.newCachedThreadPool();
         ExecutorService executorService3 = Executors.newWorkStealingPool();
@@ -16,17 +16,21 @@ public class ExecutorsRunner {
         executorService.submit(() -> System.out.println("hello " + Thread.currentThread().getName()));
         executorService.submit(() -> System.out.println("hello " + Thread.currentThread().getName()));
         executorService.submit(() -> System.out.println("hello " + Thread.currentThread().getName()));
+        executorService.submit(() -> System.out.println("hello " + Thread.currentThread().getName()));
+        executorService.submit(() -> System.out.println("hello " + Thread.currentThread().getName()));
+        executorService.submit(() -> System.out.println("hello " + Thread.currentThread().getName()));
+        executorService.submit(() -> System.out.println("hello " + Thread.currentThread().getName()));
 
         Future<Integer> result = executorService.submit(() -> 20);
-
-        System.out.println();
-        System.out.println();
-        System.out.println();
-        System.out.println();
-        System.out.println();
-        System.out.println();
-        System.out.println();
-
+//
+//        System.out.println();
+//        System.out.println();
+//        System.out.println();
+//        System.out.println();
+//        System.out.println();
+//        System.out.println();
+//        System.out.println();
+//
         System.out.println(result.get());
 
 //        executorService.submit(() -> System.out.println("hello " + Thread.currentThread().getName()));
@@ -49,7 +53,7 @@ public class ExecutorsRunner {
 //        executorService.submit(() -> Thread.sleep(5));
 
 
-        System.out.println("Конец");
+//        System.out.println("Конец");
         executorService.shutdown();
     }
 }

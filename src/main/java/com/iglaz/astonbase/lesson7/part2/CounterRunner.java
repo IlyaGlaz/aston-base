@@ -23,6 +23,10 @@ public class CounterRunner {
         UserLogIn userLogIn3 = new UserLogIn(counter);
         UserLogIn userLogIn4 = new UserLogIn(counter);
 
+//        synchronized (counter) {
+//
+//        }
+
         userLogIn1.start();
         userLogIn2.start();
         userLogIn3.start();

@@ -1,6 +1,7 @@
 package com.iglaz.astonbase.lesson7.part3;
 
 import java.util.ArrayList;
+import java.util.Hashtable;
 import java.util.List;
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
@@ -12,6 +13,7 @@ import java.util.concurrent.CopyOnWriteArrayList;
 public class ListThreadRunner {
     public static void main(String[] args) throws InterruptedException {
         List<Integer> numbers = new CopyOnWriteArrayList<Integer>();
+
 ////
 //        Map<Integer, Integer> mapSome = new ConcurrentHashMap<>();
 

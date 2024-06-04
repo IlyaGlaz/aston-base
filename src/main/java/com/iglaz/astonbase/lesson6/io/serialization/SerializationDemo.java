@@ -18,7 +18,6 @@ public class SerializationDemo {
             Object object = objectInputStream.readObject();
 
             System.out.println(object);
-
         }
     }
 

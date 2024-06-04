@@ -13,7 +13,7 @@ public class StreamThread {
 
         long finish = System.currentTimeMillis();
 
-        System.out.println(Runtime.getRuntime().availableProcessors());
+//        System.out.println(Runtime.getRuntime().availableProcessors());
 
         System.out.println(finish - start);
     }
