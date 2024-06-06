@@ -7,6 +7,8 @@ public class ClassLoadersDemo {
         System.out.println(Object.class.getClassLoader());
         System.out.println(Object.class.getClassLoader());
         System.out.println(Object.class.getClassLoader());
+        System.out.println(Object.class.getClassLoader());
+        System.out.println(Object.class.getClassLoader());
 
         System.out.println(String.class.getClassLoader());
 
