@@ -6,7 +6,7 @@ import com.iglaz.astonbase.lesson2.composition.engine.Engine;
 
 public class Transport {
     private Driver driver;
-    private Engine engine = new ElectircEngine();
+    private Engine engine;
 
     public Transport(Driver driver, Engine engine) {
         this.driver = driver;
@@ -15,5 +15,6 @@ public class Transport {
 
     void deliver(String destination, int cargo) {
         engine.move();
+        driver.navigate();
     }
 }

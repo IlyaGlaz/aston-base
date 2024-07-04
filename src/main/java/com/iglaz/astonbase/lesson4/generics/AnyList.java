@@ -14,6 +14,10 @@ public class AnyList {
     }
 
     public Object get(int number) {
+        if (elements[number] instanceof String) {
+            String element = (String) elements[number];
+        }
+
         return elements[number];
     }
 

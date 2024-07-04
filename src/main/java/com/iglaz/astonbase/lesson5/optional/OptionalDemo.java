@@ -1,41 +1,34 @@
 package com.iglaz.astonbase.lesson5.optional;
 
+
 import java.util.Optional;
 
 public class OptionalDemo {
     public static void main(String[] args) {
         Driver driver = new Driver();
-//
-//        System.out.println(driver.getLicense().getCar());
 
-        Car car = Optional.of(driver)
-                .map(Driver::getLicense)
-                .map(License::getCar)
-                .orElse(new Car());
+//        Car car = Optional.ofNullable(driver.getLicense())
+//                .map(license1 -> license1.getCar())
+//                .orElse(null);
 
-        Optional.of(driver)
-                .map(Driver::getLicense)
-                .map(License::getCar)
-                .orElseThrow();
+//        Car car1 = Optional.ofNullable(driver.getLicense())
+//                .map(license1 -> license1.getCar())
+//                .orElseThrow();
 
-        Optional.of(driver)
-                .map(Driver::getLicense)
-                .map(License::getCar)
-                .orElseGet(() -> new Car());
+//        boolean present = Optional.ofNullable(driver.getLicense())
+//                .map(license1 -> license1.getCar())
+//                .isPresent();
 
-        Optional.of(driver)
-                .map(Driver::getLicense)
-                .map(License::getCar)
-                .ifPresent(x -> car.setModel("sdr"));
+        Optional.ofNullable(driver.getLicense())
+                .map(license1 -> license1.getCar())
+                .ifPresent(car1 -> car1.setModel("Mers"));
 
-        System.out.println(car);
+//        System.out.println(present);
 
-//        if (maybeLicense.isPresent()) {
-//            System.out.println(maybeLicense.get().getCar());
-//        }
+//        optionalLicense.get().getCar();
 
-//        if (driver.getLicense() != null) {
-//            System.out.println(driver.getLicense().getCar());
+//        if (license != null) {
+//            System.out.println(license.getCar());
 //        }
     }
 }

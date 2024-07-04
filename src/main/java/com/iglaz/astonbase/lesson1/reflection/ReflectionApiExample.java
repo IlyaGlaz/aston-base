@@ -6,8 +6,10 @@ import java.lang.reflect.InvocationTargetException;
 public class ReflectionApiExample {
     public static void main(String[] args) throws InvocationTargetException, NoSuchMethodException, InstantiationException, IllegalAccessException {
         User user = new User(25L, "Ivan", 24);
-        Class<? extends User> userClass = user.getClass();
-        Class<User> userClass1 = User.class;
+
+        Class<? extends User> aClass = user.getClass();
+        Class<User> userClass = User.class;
+
         System.out.println();
 //        System.out.println(userClass == userClass1);
         testConstructor();

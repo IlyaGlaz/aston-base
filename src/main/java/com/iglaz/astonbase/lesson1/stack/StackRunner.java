@@ -8,6 +8,7 @@ public class StackRunner {
         func1();
         for (int i = 0; i < 200; i++) {
             Person person = new Person();
+
             Thread.sleep(10000);
         }
 

@@ -5,13 +5,8 @@ import com.iglaz.astonbase.lesson3.A.Predator;
 public enum Color implements Predator {
     GREEN(22, 23, 234) {
         @Override
-        public void hunt() {
-            super.hunt();
-        }
-
-        @Override
         void doSomthing() {
-            simple();
+            System.out.println("grean");
         }
 
         public void simple() {
@@ -19,11 +14,6 @@ public enum Color implements Predator {
         }
     },
     BLUE(23, 234, 234) {
-        @Override
-        public void hunt() {
-
-        }
-
         @Override
         void doSomthing() {
 
@@ -63,5 +53,7 @@ public enum Color implements Predator {
 
     }
 
-    abstract void doSomthing();
+    void doSomthing() {
+        System.out.println("Color perent");
+    }
 }

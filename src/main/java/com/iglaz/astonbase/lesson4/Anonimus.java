@@ -13,16 +13,11 @@ import java.util.function.Predicate;
 public class Anonimus {
     public static void main(String[] args) {
         class SomeClass {
-
+            void some() {
+                System.out.println("");
+            }
         }
 
         SomeClass someClass = new SomeClass();
-
-        Predator predator = new Predator() {
-            @Override
-            public void hunt() {
-                System.out.println("");
-            }
-        };
     }
 }

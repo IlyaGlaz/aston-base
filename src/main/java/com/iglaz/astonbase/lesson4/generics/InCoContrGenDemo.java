@@ -5,9 +5,9 @@ import java.util.List;
 
 public class InCoContrGenDemo {
     public static void main(String[] args) {
-        Integer str1 = 22;
-        Number obj = 2424;
-        obj = str1;
+        Integer integer = 22;
+        Number num = 2424;
+        num = integer;
 
         // Ковариантность
         String[] strArray =  new String[0];
@@ -15,19 +15,18 @@ public class InCoContrGenDemo {
         objArray = strArray;
 
         // Ковариантность List
-        List<Integer> intList = new ArrayList<>();
-        List<Double> dubList = new ArrayList<>();
-        List<? extends Number> numList = dubList;
+        List<Double> intList = new ArrayList<>();
+        List<? extends Number> numList = new ArrayList<>();
+        numList = intList;
 
-        for (Number d :
-                numList) {
+        for (Number d : numList) {
             System.out.println(d.longValue());
         }
 
         // Контравариантность List
-        List<Number> objList1 = new ArrayList<>();
+//        List<Number> numList2 = new ArrayList<>();
         List<Object> objList2 = new ArrayList<>();
-        List<? super Number> numList1 = objList2;
+        List<? super Number> numList3 = objList2;
 
         // Инвариантность
         List<String> strList = new ArrayList<>();
@@ -37,11 +36,11 @@ public class InCoContrGenDemo {
 //        PECS
 
 //        List<Object> integer = List.of(new Object());
-//        List<Number> numbers = new ArrayList<>();
+        List<Number> numbers = new ArrayList<>();
 
-        List<Double> str = new ArrayList<>();
 
-        someTest(str);
+
+        someTest(new ArrayList<Double>());
     }
 
     static void someTest(List<? extends Number> list) {

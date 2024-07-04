@@ -8,26 +8,32 @@ import java.util.stream.Stream;
 
 public class StreamRunner1 {
     public static void main(String[] args) {
-        List<Integer> numbers = Arrays.asList(22, 244, 2432).stream()
-                .toList();
+//        List<Integer> numbers = Arrays.asList(22, 244, 2432).stream()
+//                .toList();
+//
+//        numbers.stream()
+//                .filter((Integer integer) -> {
+//                            return integer > 50;
+//                        }
+//                )
+//                .map(integer -> String.valueOf(integer))
+//                .forEach(System.out::println);
 
-        numbers.stream()
-                .filter((Integer integer) -> {
-                            return integer > 50;
-                        }
-                )
-                .map(integer -> String.valueOf(integer))
-                .forEach(System.out::println);
+        List<Client> clients = List.of(new Client("aod", 22, List.of("sdom", "sdofm")),
+                new Client("ads", 23, List.of("sdfa")));
 
-        Stream<Client> stream1 = List.of(new Client("aod", 22, List.of("sdom", "sdofm")),
-                new Client("ads", 23, List.of("sdfa"))).stream();
+        clients.stream()
+                .map(client -> client.getFilms())
+                .flatMap(list -> list.stream())
+                .forEach(film -> System.out.println(film));
 
-        List<Integer> list = stream1.map(Client::getAge)
-                .toList();
 
-        List<Integer> list2 = stream1.map(Client::getAge)
-                .toList();
-
+//        List<Integer> list = stream1.map(Client::getAge)
+//                .toList();
+//
+//        List<Integer> list2 = stream1.map(Client::getAge)
+//                .toList();
+//
 //
 //        System.out.println(reduce);
 

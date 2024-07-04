@@ -1,11 +1,9 @@
 package com.iglaz.astonbase.lesson4.generics;
 
-import com.iglaz.astonbase.lesson3.D.Color;
-
 import java.util.Collection;
 import java.util.List;
 
-public class GenList<T> {
+public class GenList<T extends Comparable<T>> {
     private final T[] elements;
     private int size;
 
@@ -22,8 +20,8 @@ public class GenList<T> {
         return elements[number];
     }
 
-    static <E> void doSomthing(E someType) {
-        return;
+    static <E> E doSomthing(E someType) {
+        return someType;
     }
 
     public void putOtherList(List<T> other) {

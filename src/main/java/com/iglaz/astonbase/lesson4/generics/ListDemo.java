@@ -2,6 +2,7 @@ package com.iglaz.astonbase.lesson4.generics;
 
 import com.iglaz.astonbase.lesson2.object.Client;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Deque;
 import java.util.LinkedList;
@@ -14,25 +15,39 @@ import static java.util.Map.entry;
 public class ListDemo {
     public static void main(String[] args) {
 //        Deque<String> names = new LinkedList<>();
+////
+//        GenList<Integer> stringGenList = new GenList<>(12);
 //
-//        GenList<String> stringGenList = new GenList<String>(12);
+//        System.out.println(GenList.doSomthing(22));
 //
+//        String s = stringGenList.get(1);
+//
+//        ArrayList<String> strings = new ArrayList<>();
+//        strings.add("adfa");
+//        strings.add("adfa");
+//        strings.add("adfa");
+
 //        List<Integer> integers = List.of(234, 234, 234);
+//        integers.add(233);
 //
 //        List<Integer> list = Arrays.asList(2342, 23423, 234);
+//        list.add(2, 2323);
+
+        ArrayList<Integer> integers = new ArrayList<>(List.of(234, 234, 234));
+        integers.add(22);
 //
+        System.out.println(integers.hashCode());
+
 //        Set.of();
 //
 //        Map.of(23, "sdfa", 2424, "sdfa");
 //
 //        Map.ofEntries(entry(232, "asdfa"), entry(2342, "sdfa"));
 //
-//        integers.add(234);
 
 //        GenList.sort(List.of(234, 234, 234));
 
 //        AnyList list = new AnyList(10);
-//
 //
 //        list.add("String");
 //        list.add("String");
