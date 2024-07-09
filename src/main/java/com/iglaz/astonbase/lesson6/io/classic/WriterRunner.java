@@ -12,7 +12,7 @@ import java.util.List;
 public class WriterRunner {
 
     public static void main(String[] args) throws IOException {
-        Path path = Path.of("resources", "text2.txt");
+        Path path = Path.of("resources", "simple.txt");
 
         System.out.println();
 

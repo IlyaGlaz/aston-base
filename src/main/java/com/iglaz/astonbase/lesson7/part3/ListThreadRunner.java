@@ -12,7 +12,7 @@ import java.util.concurrent.CopyOnWriteArrayList;
  */
 public class ListThreadRunner {
     public static void main(String[] args) throws InterruptedException {
-        List<Integer> numbers = new CopyOnWriteArrayList<Integer>();
+        List<Integer> numbers = new CopyOnWriteArrayList<>();
 
 ////
 //        Map<Integer, Integer> mapSome = new ConcurrentHashMap<>();

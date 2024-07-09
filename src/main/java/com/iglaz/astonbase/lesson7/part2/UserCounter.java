@@ -7,7 +7,7 @@ import java.util.concurrent.atomic.AtomicInteger;
  * 9 -> 9 + 1 -> 11
  * 10 -> 10 -> 11
  *
- * 10    ====   10  ------> ++++++ 10
+ * 11   ====   11  ------> ++++++ 11
  *
  * CAS
  *
@@ -17,7 +17,7 @@ public class UserCounter {
 
     void increment() {
          // III     I        II
-      counter.incrementAndGet();
+        counter.incrementAndGet();
     }
 
    public AtomicInteger getUserCounter() {

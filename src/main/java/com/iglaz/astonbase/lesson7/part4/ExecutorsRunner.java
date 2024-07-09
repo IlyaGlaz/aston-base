@@ -7,12 +7,18 @@ import java.util.concurrent.Future;
 
 public class ExecutorsRunner {
     public static void main(String[] args) throws ExecutionException, InterruptedException {
-        ExecutorService executorService = Executors.newFixedThreadPool(200);
+        ExecutorService executorService = Executors.newFixedThreadPool(3);
 //        ExecutorService executorService1 = Executors.newSingleThreadExecutor();
 //        ExecutorService executorService2 = Executors.newCachedThreadPool();
         ExecutorService executorService3 = Executors.newWorkStealingPool();
 
-        executorService.execute(() -> System.out.println("hello " + Thread.currentThread().getName()));
+        try {
+            executorService.execute(() -> {
+                System.out.println(10 / 0);
+            });
+        } catch (ArithmeticException ex) {
+            System.out.println("Catched");
+        }
         executorService.submit(() -> System.out.println("hello " + Thread.currentThread().getName()));
         executorService.submit(() -> System.out.println("hello " + Thread.currentThread().getName()));
         executorService.submit(() -> System.out.println("hello " + Thread.currentThread().getName()));
@@ -20,7 +26,7 @@ public class ExecutorsRunner {
         executorService.submit(() -> System.out.println("hello " + Thread.currentThread().getName()));
         executorService.submit(() -> System.out.println("hello " + Thread.currentThread().getName()));
         executorService.submit(() -> System.out.println("hello " + Thread.currentThread().getName()));
-
+//
         Future<Integer> result = executorService.submit(() -> 20);
 //
 //        System.out.println();

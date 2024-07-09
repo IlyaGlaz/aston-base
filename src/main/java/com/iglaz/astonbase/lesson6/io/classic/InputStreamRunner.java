@@ -22,6 +22,8 @@ public class InputStreamRunner {
 
             String stringValue = new String(bytes);
             System.out.println(stringValue);
+        } catch(IOException ex) {
+            System.out.println(ex);
         }
     }
 }

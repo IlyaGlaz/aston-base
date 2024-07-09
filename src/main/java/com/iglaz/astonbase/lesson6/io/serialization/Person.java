@@ -5,7 +5,8 @@ import java.util.UUID;
 
 public class Person implements Serializable {
     private static final long serialVersionUID = 1L;
-    private int age;
+    private transient int age;
+    private String firstName;
 
     public Person(int age, String firstName) {
         this.age = age;
