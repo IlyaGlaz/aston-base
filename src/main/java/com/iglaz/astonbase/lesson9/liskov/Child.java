@@ -7,12 +7,10 @@ import java.util.List;
 
 public class Child extends Parent {
 
-//    @Override
-//    void feed(Cat animal) {
-//        // some logic
-//
-//        return new Cat;
-//    }
+    @Override
+    void feed(Cat animal) {
+        // some logic
+    }
 
 //    /**
 //     * Good
@@ -22,7 +20,7 @@ public class Child extends Parent {
 //        // some logic
 //
 //    }
-//
+
 //    /**
 //     * Bad
 //     */
@@ -53,16 +51,16 @@ public class Child extends Parent {
 //    }
 
 
-//    @Override
-//    int calculate(int number) {
-//        if (number < 0) {
-//            return 0;
-//        }
-//
-//        // some logic
-//
-//        return number * number;
-//    }
+    @Override
+    int calculate(int number) {
+        if (number < 0) {
+            return 0;
+        }
+
+        // some logic
+
+        return number * number;
+    }
 
 //    @Override
 //    int calculate(int number) {

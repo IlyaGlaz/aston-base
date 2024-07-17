@@ -1,13 +1,19 @@
 package com.iglaz.astonbase.lesson9.prototype;
 
+import java.util.List;
+
 public class PrototypeDemo {
     public static void main(String[] args) {
-        Rectangle anyForm = new Rectangle(22, "anyForm", 22, 44);
+        ComplexThing prototypeThing = new ComplexThing(22, 22, 44);
 
-        Shape copyShape = anyForm.copy();
+        List<ComplexThing> workingThings = List.of(
+                prototypeThing.copy(77),
+                prototypeThing.copy(52222),
+                prototypeThing.copy(72),
+                prototypeThing.copy(666),
+                prototypeThing.copy(1234)
+        );
 
-        System.out.println(anyForm);
-        System.out.println(copyShape);
-
+        System.out.println(workingThings);
     }
 }
