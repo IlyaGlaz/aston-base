@@ -1,13 +1,10 @@
 package com.iglaz.astonbase.lesson1.stack;
 
-import com.iglaz.astonbase.lesson1.structure.Person;
-
 public class StackRunner {
     public static void main(String[] args) throws InterruptedException {
         System.out.println("Start");
         func1();
         for (int i = 0; i < 200; i++) {
-            Person person = new Person();
 
             Thread.sleep(10000);
         }
