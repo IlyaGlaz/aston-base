@@ -2,16 +2,20 @@ package com.iglaz.astonbase.lesson1.structure;
 
 public class PersonRunner {
     public static void main(String[] args) {
-        Person person1 = new Person(24, "Dima");
-        Person person2 = new Person(22, "Ivan");
-        Person person3 = new Person();
+        int number = 22;
 
-        person1.sayHello();
-        person2.sayHello();
+        Person ivan = new Person();
+        Person ivan3 = new Person();
+        Person ivan2 = new Person();
 
-        person2.setAge(23);
-        person2.setName("Sema");
+        some(22L);
+    }
 
-        Person old = Person.createOld();
+    static Person madeOldPerson() {
+        return new Person(99, "Ivanich");
+    }
+
+    static void some(long num) {
+        System.out.println(num);
     }
 }
