@@ -2,7 +2,6 @@ package com.iglaz.astonbase.lesson4.generics;
 
 import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.Collections;
 import java.util.List;
 
 public class GenericsDemo {
@@ -30,7 +29,7 @@ public class GenericsDemo {
 
         List<Integer> str2 = new ArrayList<>(Arrays.asList(22, 2234, 234));
 
-        List<Integer> str = List.of(233, 23, 234, 234,234,234,234,234,234,234,2342,234,234);
+        List<Integer> str = List.of(233, 23, 234, 234, 234, 234, 234, 234, 234, 234, 2342, 234, 234);
 
         List<Integer> list = Arrays.asList(22, 2234, 234);
         list.set(1, 44);

@@ -1,4 +1,4 @@
-package com.iglaz.astonbase.lesson3.A;
+package com.iglaz.astonbase.lesson2.inheritance;
 
 public class Dog extends Animal {
     @Override

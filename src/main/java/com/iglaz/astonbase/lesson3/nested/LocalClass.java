@@ -1,4 +1,4 @@
-package com.iglaz.astonbase.lesson3.E;
+package com.iglaz.astonbase.lesson3.nested;
 
 import java.util.Comparator;
 

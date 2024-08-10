@@ -31,8 +31,23 @@ public class Person {
         this.name = name;
     }
 
-    void sayHello() {
+    public void sayHello() {
         System.out.println("Hey, my name is... " + name);
+    }
+
+    public void sayHello(int age) {
+        System.out.println("Hey, my name is... " + name);
+    }
+
+    public void someMethod() {
+        System.out.println("Up");
+        someLogic();
+    }
+
+    private void someLogic() {
+        System.out.println();
+        System.out.println();
+        System.out.println();
     }
 
     public int getAge() {
@@ -44,7 +59,11 @@ public class Person {
     }
 
     public void setAge(int age) {
-        this.age = age;
+        if (age > 100) {
+            System.out.println("Not correct");
+        } else {
+            this.age = age;
+        }
     }
 
     public void setName(String name) {

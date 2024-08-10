@@ -1,16 +1,7 @@
 package com.iglaz.astonbase.lesson4.generics;
 
-import com.iglaz.astonbase.lesson2.object.Client;
-
 import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Deque;
-import java.util.LinkedList;
 import java.util.List;
-import java.util.Map;
-import java.util.Set;
-
-import static java.util.Map.entry;
 
 public class ListDemo {
     public static void main(String[] args) {
