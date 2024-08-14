@@ -2,8 +2,7 @@ package com.iglaz.astonbase.lesson3.nested;
 
 public class HomeDemo {
     public static void main(String[] args) {
-        Home home = new Home();
-        Home.Room room = home.new Room();
+        Home.Room room = new Home().new Room();
 
         System.out.println();
 

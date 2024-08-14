@@ -1,9 +1,12 @@
 package com.iglaz.astonbase.lesson3;
 
-//public class Trader implements Buyer, Seller {
-//
-//
-//}
+public class Trader implements Buyer, Seller {
+
+    @Override
+    public void call() {
+        System.out.println();
+    }
+}
 
 interface Buyer {
 

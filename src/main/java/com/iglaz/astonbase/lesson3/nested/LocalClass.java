@@ -1,24 +1,22 @@
 package com.iglaz.astonbase.lesson3.nested;
 
-import java.util.Comparator;
+import com.iglaz.astonbase.lesson2.inheritance.Flyable;
 
 public class LocalClass {
     public static void main(String[] args) {
-//        class MyLocalClass {
-//            int number;
-//        }
-//
-//        MyLocalClass myLocalClass = new MyLocalClass();
+        class someClass {
+
+        }
+
+        someClass someClass = new someClass();
 
 
-        Comparator comparator = new Comparator() {
+        Flyable flyable = new Flyable() {
 
             @Override
-            public int compare(Object o1, Object o2) {
-                return 0;
+            public void fly() {
+
             }
         };
-
-
     }
 }

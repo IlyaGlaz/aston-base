@@ -1,6 +1,6 @@
 package com.iglaz.astonbase.lesson2.inheritance;
 
-public class Animal {
+public abstract class Animal {
     private int weight;
     private int height;
 
@@ -13,14 +13,9 @@ public class Animal {
         this.height = height;
     }
 
-    public void makeSound() {
-        System.out.println("Sound");
-        System.out.println(weight);
-    }
+    protected abstract void makeSound();
 
-    public  void performEat() {
-        System.out.println("Eat");
-    }
+    public abstract void performEat();
 
     static void staticMethod() {
         System.out.println("Animlstatic");

@@ -1,10 +1,19 @@
 package com.iglaz.astonbase.lesson2.object;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Objects;
 
-public final class Client {
-    private final String name;
+public final class Client implements Cloneable {
+    private String name;
     private final Integer age;
+    private List<String> films = new ArrayList<>();
+
+    public Client(Client client) {
+        this.name = client.name;
+        this.age = client.age;
+        this.films = new ArrayList<>(client.getFilms());
+    }
 
     public Client(String name, Integer age) {
         this.name = name;
@@ -19,11 +28,16 @@ public final class Client {
         return age;
     }
 
+    public void addFilms(String film) {
+        films.add(film);
+    }
+
     @Override
     public String toString() {
         return "Client{" +
                 "name='" + name + '\'' +
                 ", age=" + age +
+                ", films=" + films +
                 '}';
     }
 
@@ -43,4 +57,27 @@ public final class Client {
     public int hashCode() {
         return Objects.hash(name, age);
     }
+
+    @Override
+    public Client clone() throws CloneNotSupportedException {
+        Client clone = (Client) super.clone();
+        clone.films = new ArrayList<>(this.films);
+
+        return clone;
+    }
+
+    public List<String> getFilms() {
+        return films;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public void setFilms(List<String> films) {
+        this.films = films;
+    }
 }
+
+
+
