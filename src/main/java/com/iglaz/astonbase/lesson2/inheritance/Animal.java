@@ -1,7 +1,7 @@
 package com.iglaz.astonbase.lesson2.inheritance;
 
 public abstract class Animal {
-    private int weight;
+    protected int weight;
     private int height;
 
     public Animal() {

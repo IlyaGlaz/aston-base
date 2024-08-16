@@ -15,8 +15,11 @@ public class LocalClass {
 
             @Override
             public void fly() {
-
+                System.out.println();
             }
+
         };
+
+        flyable.fly();
     }
 }

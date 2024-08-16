@@ -13,6 +13,6 @@ public class Dog extends Animal implements Flyable, Cloneable {
 
     @Override
     public void fly() {
-        System.out.println("I am flying");
+        System.out.println("I am fling");
     }
 }

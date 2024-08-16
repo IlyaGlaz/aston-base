@@ -6,12 +6,12 @@ import java.util.Objects;
 
 public final class Client implements Cloneable {
     private String name;
-    private final Integer age;
+    private final int age;
     private List<String> films = new ArrayList<>();
 
-    public Client(Client client) {
+    public Client(Client client, int age) {
         this.name = client.name;
-        this.age = client.age;
+        this.age = age;
         this.films = new ArrayList<>(client.getFilms());
     }
 
@@ -58,14 +58,6 @@ public final class Client implements Cloneable {
         return Objects.hash(name, age);
     }
 
-    @Override
-    public Client clone() throws CloneNotSupportedException {
-        Client clone = (Client) super.clone();
-        clone.films = new ArrayList<>(this.films);
-
-        return clone;
-    }
-
     public List<String> getFilms() {
         return films;
     }
@@ -77,7 +69,17 @@ public final class Client implements Cloneable {
     public void setFilms(List<String> films) {
         this.films = films;
     }
+
+    @Override
+    public Client clone() throws CloneNotSupportedException {
+        Client clone = (Client) super.clone();
+        clone.setFilms(new ArrayList<>(this.films));
+
+        return clone;
+    }
+
+    public Client copy(int age) {
+        return new Client(this, age);
+    }
 }
-
-
 

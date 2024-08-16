@@ -1,19 +1,11 @@
 package com.iglaz.astonbase.lesson2.inheritance;
 
 public interface Flyable {
-   static int some = 22;
-   void fly();
+    static int age = 22;
 
-   default void someMethod() {
-       System.out.println();
-       somePrivate();
-   }
+    void fly();
 
-   static void someStatic() {
-
-   }
-
-   private void somePrivate() {
-
-   }
+    default void someMethod() {
+        System.out.println("");
+    }
 }
