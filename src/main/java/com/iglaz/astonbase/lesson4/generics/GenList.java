@@ -1,6 +1,6 @@
 package com.iglaz.astonbase.lesson4.generics;
 
-public class GenList<T> {
+public class GenList<T extends String> {
     private final T[] elements;
     private int size;
 
@@ -19,6 +19,10 @@ public class GenList<T> {
 
     static <E> E addOtherElement(E elem) {
         return elem;
+    }
+
+    void sort() {
+
     }
 
     public int getSize() {
