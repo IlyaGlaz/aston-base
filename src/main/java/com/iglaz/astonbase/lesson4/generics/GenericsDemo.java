@@ -1,8 +1,8 @@
 package com.iglaz.astonbase.lesson4.generics;
 
+import com.iglaz.astonbase.lesson2.object.Client;
+
 import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
 
 public class GenericsDemo {
     public static void main(String[] args) {
@@ -10,35 +10,35 @@ public class GenericsDemo {
 //
 //        anyList.add("String");
 //        anyList.add(22);
-//
-//        Object o = anyList.get(1);
-//        if (o instanceof String) {
-//            String o2 = (String) o;
-//            o2.length();
-//        }
-
 //        anyList.add(22);
-
-//        GenList<Integer> intList = new GenList<>(22);
-//        intList.add(22);
 //
-//        Integer i = intList.get(0);
-//        i.byteValue();
-//
-//        putList(intList);
+//        String str = (String) anyList.get(1);
 
-        List<Integer> str2 = new ArrayList<>(Arrays.asList(22, 2234, 234));
+        GenList<String> intList = new GenList<>(22);
+        GenList.addOtherElement(new Client("Inva", 22));
 
-        List<Integer> str = List.of(233, 23, 234, 234, 234, 234, 234, 234, 234, 234, 2342, 234, 234);
+        Object num = Integer.valueOf(22);
+        putSingel(22L);
 
-        List<Integer> list = Arrays.asList(22, 2234, 234);
-        list.set(1, 44);
+        putArr(new Integer[] {});
 
-        ArrayList<String> strings = new ArrayList<>();
-        strings.trimToSize();
+        putList(new GenList<Object>(10));
+
+        ArrayList<Number> numbers = new ArrayList<>(new ArrayList<Integer>());
+
     }
 
-    static void putList(GenList<? extends Number> list) {
+    // Инварианты
+    static void putList(GenList<? super Number> list) {
+
+    }
+
+    // Коварианты
+    static void putArr(Number[] arr) {
+
+    }
+
+    static void putSingel(Number num) {
 
     }
 }

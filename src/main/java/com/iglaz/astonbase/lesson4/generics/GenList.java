@@ -1,9 +1,6 @@
 package com.iglaz.astonbase.lesson4.generics;
 
-import java.util.Collection;
-import java.util.List;
-
-public class GenList<T extends Comparable<T>> {
+public class GenList<T> {
     private final T[] elements;
     private int size;
 
@@ -20,16 +17,8 @@ public class GenList<T extends Comparable<T>> {
         return elements[number];
     }
 
-    static <E> E doSomthing(E someType) {
-        return someType;
-    }
-
-    public void putOtherList(List<T> other) {
-
-    }
-
-    static void sort(Collection<? extends Comparable<?>> collection) {
-
+    static <E> E addOtherElement(E elem) {
+        return elem;
     }
 
     public int getSize() {
