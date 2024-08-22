@@ -1,6 +1,6 @@
 package com.iglaz.astonbase.lesson4.generics;
 
-public class GenList<T extends String> {
+public class GenList<T> {
     private final T[] elements;
     private int size;
 

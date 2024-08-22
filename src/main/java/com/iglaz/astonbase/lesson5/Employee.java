@@ -2,7 +2,7 @@ package com.iglaz.astonbase.lesson5;
 
 import java.util.Objects;
 
-public final class Employee implements Comparable<Employee> {
+public final class Employee {
     private String name;
     private final int age;
 
@@ -34,15 +34,6 @@ public final class Employee implements Comparable<Employee> {
     @Override
     public int hashCode() {
         return Objects.hash(name, age);
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    @Override
-    public int compareTo(Employee o) {
-        return this.age - o.age;
     }
 
     @Override

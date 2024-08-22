@@ -22,14 +22,12 @@ public class GenericsDemo {
 
         putArr(new Integer[] {});
 
-        putList(new GenList<Object>(10));
-
         ArrayList<Number> numbers = new ArrayList<>(new ArrayList<Integer>());
 
     }
 
     // Инварианты
-    static void putList(GenList<? super Number> list) {
+    static void putList(GenList<Number> list) {
 
     }
 

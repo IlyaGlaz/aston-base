@@ -6,6 +6,7 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
 import java.util.List;
+import java.util.function.Predicate;
 
 public class StreamBasic {
     public static void main(String... args) {
@@ -44,14 +45,18 @@ public class StreamBasic {
     }
 
     public static List<String> getLowCaloricDishesNamesInJava8(List<Dish> dishes) {
-        Comparator<Dish> dishComparator = (Dish o1, Dish o2) -> o1.getCalories() - o2.getCalories();
+        Predicate<Dish> func = dish -> dish.getCalories() > 400;
 
-        List<String> list = dishes.stream()
-                .filter(dish -> dish.getCalories() > 400)
-                .sorted(dishComparator)
+        dishes.stream()
+                .filter(func)
+                .sorted()
                 .map(dish -> dish.getName())
-                .toList();
+                .forEach(System.out::println);
 
         return Collections.emptyList();
+    }
+
+    static public boolean some(Dish dish) {
+        return true;
     }
 }
