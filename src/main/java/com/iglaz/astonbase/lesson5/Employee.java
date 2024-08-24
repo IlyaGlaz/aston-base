@@ -2,7 +2,7 @@ package com.iglaz.astonbase.lesson5;
 
 import java.util.Objects;
 
-public final class Employee {
+public final class Employee implements Comparable<Employee> {
     private String name;
     private final int age;
 
@@ -42,5 +42,10 @@ public final class Employee {
                 "name='" + name + '\'' +
                 ", age=" + age +
                 '}';
+    }
+
+    @Override
+    public int compareTo(Employee o) {
+        return this.age - o.age;
     }
 }

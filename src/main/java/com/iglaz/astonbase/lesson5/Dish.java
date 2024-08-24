@@ -9,6 +9,7 @@ public class Dish {
     private final boolean vegetarian;
     private final Integer calories;
     private final Type type;
+    private List<String> ingredients;
 
     public Dish(String name, boolean vegetarian, Integer calories, Type type) {
         this.name = name;
@@ -31,6 +32,10 @@ public class Dish {
 
     public Type getType() {
         return type;
+    }
+
+    public List<String> getIngredients() {
+        return ingredients;
     }
 
     public enum Type {
