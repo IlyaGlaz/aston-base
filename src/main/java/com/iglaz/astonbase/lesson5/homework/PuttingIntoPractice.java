@@ -7,6 +7,11 @@ import java.util.stream.Collectors;
 
 public class PuttingIntoPractice {
 
+    final static int YEAR_2011 = 2011;
+    final static String CITY_CAMBRIDGE = "Cambridge";
+    final static String MILAN_CITY = "Milan";
+    final static String CITY_TRANSACTION = "Cambridge";
+
     public static void main(String... args) {
         Trader raoul = new Trader("Raoul", "Cambridge");
         Trader mario = new Trader("Mario", "Milan");
@@ -23,7 +28,6 @@ public class PuttingIntoPractice {
         );
 
         // 1. Найти все транзакции за 2011 год и отсортировать их по сумме (от меньшей к большей).
-        final var YEAR_2011 = 2011;
 
         List<Transaction> listResult = transactions.stream()
                 .filter(t -> t.getYear() == YEAR_2011)
@@ -43,8 +47,6 @@ public class PuttingIntoPractice {
 
 
         // 3. Найти всех трейдеров из Кембриджа и отсортировать их по именам.
-        final var CITY_CAMBRIDGE = "Cambridge";
-
         List<Trader> listTraders = transactions.stream()
                 .map(Transaction::getTrader)
                 .filter(trader -> trader.getCity().equals(CITY_CAMBRIDGE))
@@ -68,8 +70,6 @@ public class PuttingIntoPractice {
 
 
         // 5. Выяснить, существует ли хоть один трейдер из Милана.
-        final var MILAN_CITY = "Milan";
-
         boolean containsTraderMilana = transactions.stream()
                 .anyMatch(transaction -> transaction.getTrader().getCity().equals(MILAN_CITY));
 
@@ -77,8 +77,6 @@ public class PuttingIntoPractice {
 
 
         // 6. Вывести суммы всех транзакций трейдеров из Кембриджа.
-        final var CITY_TRANSACTION = "Cambridge";
-
         int sumTransaction = transactions.stream()
                 .filter(transaction -> transaction.getTrader().getCity().equals(CITY_TRANSACTION))
                 .map(Transaction::getValue)
