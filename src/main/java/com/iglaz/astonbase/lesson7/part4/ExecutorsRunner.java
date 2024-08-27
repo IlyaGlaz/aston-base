@@ -10,15 +10,8 @@ public class ExecutorsRunner {
         ExecutorService executorService = Executors.newFixedThreadPool(3);
 //        ExecutorService executorService1 = Executors.newSingleThreadExecutor();
 //        ExecutorService executorService2 = Executors.newCachedThreadPool();
-        ExecutorService executorService3 = Executors.newWorkStealingPool();
+//        ExecutorService executorService3 = Executors.newWorkStealingPool();
 
-        try {
-            executorService.execute(() -> {
-                System.out.println(10 / 0);
-            });
-        } catch (ArithmeticException ex) {
-            System.out.println("Catched");
-        }
         executorService.submit(() -> System.out.println("hello " + Thread.currentThread().getName()));
         executorService.submit(() -> System.out.println("hello " + Thread.currentThread().getName()));
         executorService.submit(() -> System.out.println("hello " + Thread.currentThread().getName()));
@@ -28,16 +21,18 @@ public class ExecutorsRunner {
         executorService.submit(() -> System.out.println("hello " + Thread.currentThread().getName()));
 //
         Future<Integer> result = executorService.submit(() -> 20);
-//
-//        System.out.println();
-//        System.out.println();
-//        System.out.println();
-//        System.out.println();
-//        System.out.println();
-//        System.out.println();
-//        System.out.println();
-//
+
         System.out.println(result.get());
+//
+//        System.out.println();
+//        System.out.println();
+//        System.out.println();
+//        System.out.println();
+//        System.out.println();
+//        System.out.println();
+//        System.out.println();
+//
+//        System.out.println(result.get());
 
 //        executorService.submit(() -> System.out.println("hello " + Thread.currentThread().getName()));
 //        executorService.submit(() -> System.out.println("hello " + Thread.currentThread().getName()));

@@ -24,7 +24,7 @@ public class SerializationDemo {
     private static void writeObject(Path path) throws IOException {
         try (ObjectOutputStream objectOutputStream = new ObjectOutputStream(new FileOutputStream(path.toFile()))) {
 
-            Person sergey = new Person(26, "Sergey");
+            Person sergey = new Person(26, new Person(40, "Max"),"Sergey");
 
             objectOutputStream.writeObject(sergey);
         }

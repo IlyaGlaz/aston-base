@@ -4,20 +4,32 @@ import java.util.concurrent.atomic.AtomicInteger;
 
 /**
  * 9 -> 9 + 1 -> 10
- * 9 -> 9 + 1 -> 11
+ * 10 -> 10 + 1 -> 11
  * 10 -> 10 -> 11
  *
  * 11   ====   11  ------> ++++++ 11
  *
- * CAS
+ * C compare 10 -> 11 - >>>>>>>> 11 -  12->>>>>>>>
+ * A and
+ * S swap
  *
  */
 public class UserCounter {
    private AtomicInteger counter = new AtomicInteger();
 
     void increment() {
-         // III     I        II
+        // III     I        II
         counter.incrementAndGet();
+        System.out.println();
+        System.out.println();
+        System.out.println();
+
+    }
+
+    synchronized void someMethod() {
+
+        System.out.println();
+
     }
 
    public AtomicInteger getUserCounter() {
