@@ -1,10 +1,11 @@
 package com.iglaz.astonbase.lesson2.object;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 
-public final class Client implements Cloneable {
+public final class Client implements Cloneable, Serializable {
     private String name;
     private final int age;
     private List<String> films = new ArrayList<>();

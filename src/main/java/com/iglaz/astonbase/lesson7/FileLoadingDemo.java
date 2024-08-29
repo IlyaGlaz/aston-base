@@ -11,10 +11,11 @@ public class FileLoadingDemo {
     public static void main(String[] args) {
         long startTime = System.currentTimeMillis();
 
+        ExecutorService executorService = Executors.newFixedThreadPool(10);
         try (Stream<Path> files = Files.list(Path.of("resources"))) {
-            ExecutorService executorService = Executors.newFixedThreadPool(10);
 
             files.forEach(path -> executorService.submit(() -> inputAndOutput(path)));
+//            files.forEach(path -> inputAndOutput(path));
 
         } catch (IOException ex) {
             System.out.println(ex);
@@ -22,6 +23,7 @@ public class FileLoadingDemo {
 
         long finishTime = System.currentTimeMillis();
         System.out.println(finishTime - startTime);
+        executorService.shutdown();
     }
 
     private static void inputAndOutput(Path path) {

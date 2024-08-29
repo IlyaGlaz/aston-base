@@ -1,5 +1,7 @@
 package com.iglaz.astonbase.lesson6.io.serialization;
 
+import com.iglaz.astonbase.lesson2.object.Client;
+
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.IOException;
@@ -24,7 +26,7 @@ public class SerializationDemo {
     private static void writeObject(Path path) throws IOException {
         try (ObjectOutputStream objectOutputStream = new ObjectOutputStream(new FileOutputStream(path.toFile()))) {
 
-            Person sergey = new Person(26, new Person(40, "Max"),"Sergey");
+            Person sergey = new Person(26, "Max", new Client("some", 22));
 
             objectOutputStream.writeObject(sergey);
         }

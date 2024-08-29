@@ -1,8 +1,5 @@
 package com.iglaz.astonbase.lesson7.part1;
 
-import java.util.concurrent.locks.Lock;
-import java.util.concurrent.locks.ReentrantLock;
-
 public class SimpleRunner {
     public static void main(String[] args) throws InterruptedException {
         System.out.println("Before");
@@ -23,13 +20,5 @@ public class SimpleRunner {
             }
             System.out.println("Finish");
         }).start();
-
-        ThreadLocal<Integer>;
-        Lock lock = new ReentrantLock();
-
-        lock.tryLock();
-
-        lock.unlock();
-
     }
 }

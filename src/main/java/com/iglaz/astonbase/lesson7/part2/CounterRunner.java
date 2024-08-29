@@ -16,25 +16,25 @@ package com.iglaz.astonbase.lesson7.part2;
  */
 public class CounterRunner {
     public static void main(String[] args) throws InterruptedException {
-        UserCounter counter = new UserCounter();
+        SharedCounter counter = new SharedCounter();
 
-        UserLogIn userLogIn1 = new UserLogIn(counter);
-        UserLogIn userLogIn2 = new UserLogIn(counter);
-        UserLogIn userLogIn3 = new UserLogIn(counter);
-        UserLogIn userLogIn4 = new UserLogIn(counter);
+        IncrementThread incrementThread1 = new IncrementThread(counter);
+        IncrementThread incrementThread2 = new IncrementThread(counter);
+        IncrementThread incrementThread3 = new IncrementThread(counter);
+        IncrementThread userLogIn4 = new IncrementThread(counter);
 
 //        synchronized (counter) {
 //
 //        }
 
-        userLogIn1.start();
-        userLogIn2.start();
-        userLogIn3.start();
+        incrementThread1.start();
+        incrementThread2.start();
+        incrementThread3.start();
         userLogIn4.start();
 
-        userLogIn1.join();
-        userLogIn2.join();
-        userLogIn3.join();
+        incrementThread1.join();
+        incrementThread2.join();
+        incrementThread3.join();
         userLogIn4.join();
 
         System.out.println(counter.getUserCounter());

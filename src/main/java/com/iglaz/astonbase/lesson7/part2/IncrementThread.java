@@ -1,10 +1,10 @@
 package com.iglaz.astonbase.lesson7.part2;
 
-public class UserLogIn extends Thread {
+public class IncrementThread extends Thread {
 
-    private final UserCounter counter;
+    private final SharedCounter counter;
 
-    public UserLogIn(UserCounter counter) {
+    public IncrementThread(SharedCounter counter) {
         this.counter = counter;
     }
 
