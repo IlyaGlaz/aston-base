@@ -3,12 +3,12 @@ package com.iglaz.astonbase.lesson9.liskov;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
-import java.util.List;
 
 public class Child extends Parent {
 
     @Override
     void feed(Cat animal) {
+
         // some logic
     }
 
@@ -77,6 +77,7 @@ public class Child extends Parent {
     @Override
     void findInDB(Long id) throws SQLException {
         Connection connection = DriverManager.getConnection("", "", "");
+
 
     }
 }

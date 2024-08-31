@@ -7,6 +7,7 @@ import java.sql.SQLException;
 public class Parent {
 
     void feed(Cat animal) {
+
         // some logic
     }
 
