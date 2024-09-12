@@ -1,22 +1,10 @@
 package com.iglaz.astonbase.lesson2.inheritance;
 
-import java.util.LinkedList;
-import java.util.List;
-
 public class AnimalDemo {
     public static void main(String[] args) {
-        Animal[] zoo = {new Cat(), new Dog(), new Cat(), new Dog()};
+        Animal animal1 = new Animal(22, 44);
+        Animal animal2 = new Animal(22, 44);
 
-        List<String> list = new LinkedList<>();
-
-        list.add("Str");
-
-        for (Animal a : zoo) {
-            a.makeSound();
-        }
-    }
-
-    static void some(Animal animal) {
-        animal.makeSound();
+        System.out.println(animal1.equals(animal2));
     }
 }

@@ -1,22 +1,35 @@
 package com.iglaz.astonbase.lesson1.structure;
 
 public class Person {
-    int age = 22;
-    String name = "Vanya";
+    final private int age;
+    final private String name;
+    static int counter;
 
-    public Person() {
+    static {
+        System.out.println("Static init");
+    }
+
+    {
+        System.out.println("Instatce init");
     }
 
     public Person(int age, String name) {
         this.age = age;
         this.name = name;
+        counter++;
+
+        System.out.println("In constructor");
     }
 
-    public Person(String name) {
-        this.name = name;
-    }
-
-    public void sayHello() {
+    public void sayHello(String str) {
         System.out.println("Hey, my name is... " + name);
+    }
+
+    public void sayHello(int number) {
+        System.out.println("Hey, my name is... " + name);
+    }
+
+    public static int getCounter() {
+        return counter;
     }
 }

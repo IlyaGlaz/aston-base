@@ -1,27 +1,13 @@
 package com.iglaz.astonbase.lesson3.en;
 
-import com.iglaz.astonbase.lesson2.inheritance.Flyable;
-
-public enum Color implements Flyable {
+public enum Color  {
     BLUE(22, 44, 44) {
-        @Override
-        public void fly() {
-
-        }
     },
 
     RED(105, 0, 222) {
-        @Override
-        public void fly() {
-
-        }
     },
 
     GREEN(11, 444, 22) {
-        @Override
-        public void fly() {
-
-        }
     };
 
     final int r;

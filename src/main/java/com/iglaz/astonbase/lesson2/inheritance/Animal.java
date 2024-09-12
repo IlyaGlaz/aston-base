@@ -1,7 +1,9 @@
 package com.iglaz.astonbase.lesson2.inheritance;
 
-public abstract class Animal {
-    protected int weight;
+import java.util.Objects;
+
+public class Animal {
+    private int weight;
     private int height;
 
     public Animal() {
@@ -11,14 +13,16 @@ public abstract class Animal {
     public Animal(int weight, int height) {
         this.weight = weight;
         this.height = height;
+
+        System.out.println("in animal");
     }
 
-    protected abstract void makeSound();
+    public void makeSound() {
+        System.out.println("Simple");
+    }
 
-    public abstract void performEat();
-
-    static void staticMethod() {
-        System.out.println("Animlstatic");
+    public void performEat() {
+        System.out.println("Simple");
     }
 
     public int getWeight() {
@@ -27,5 +31,40 @@ public abstract class Animal {
 
     public int getHeight() {
         return height;
+    }
+
+    public void setWeight(int weight) {
+        if (weight <= 100) {
+            this.weight = weight;
+        }
+    }
+
+    public void setHeight(int height) {
+        this.height = height;
+    }
+
+    @Override
+    public String toString() {
+        return "Animal{" +
+                "weight=" + weight +
+                ", height=" + height +
+                '}';
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+
+        if (o == null || getClass() != o.getClass()) return false;
+
+        Animal animal = (Animal) o;
+
+        return weight == animal.weight
+                && height == animal.height;
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(weight, height);
     }
 }

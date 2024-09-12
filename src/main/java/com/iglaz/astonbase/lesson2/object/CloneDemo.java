@@ -4,7 +4,6 @@ public class CloneDemo {
     public static void main(String[] args) throws CloneNotSupportedException {
         Client ivan = new Client("Ivan", 22);
         ivan.addFilms("some film");
-        Client copy = ivan.copy(44);
 
         Client cloneIvan = ivan.clone();
 
@@ -15,6 +14,6 @@ public class CloneDemo {
 
         System.out.println(ivan);
         System.out.println(cloneIvan);
-        System.out.println(copy);
+//        System.out.println(copy);
     }
 }
