@@ -1,6 +1,7 @@
 package com.iglaz.astonbase.lesson2.inheritance;
 
 public class Cat extends Animal {
+
     public Cat() {
         System.out.println("In Cat constructor");
     }
@@ -18,6 +19,10 @@ public class Cat extends Animal {
     @Override
     public void performEat() {
         System.out.println("Eat mouse");
+    }
+
+    public void play() {
+        System.out.println("Play");
     }
 
     static void staticMethod() {

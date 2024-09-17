@@ -2,7 +2,8 @@ package com.iglaz.astonbase.lesson2.inheritance;
 
 import java.util.Objects;
 
-public class Animal {
+public abstract class Animal {
+    static final String DNK = "XY";
     private int weight;
     private int height;
 
@@ -17,13 +18,9 @@ public class Animal {
         System.out.println("in animal");
     }
 
-    public void makeSound() {
-        System.out.println("Simple");
-    }
+    public abstract void makeSound();
 
-    public void performEat() {
-        System.out.println("Simple");
-    }
+    public abstract void performEat();
 
     public int getWeight() {
         return weight;

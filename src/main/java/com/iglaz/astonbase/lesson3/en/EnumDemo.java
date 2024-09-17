@@ -2,11 +2,18 @@ package com.iglaz.astonbase.lesson3.en;
 
 public class EnumDemo {
     public static void main(String[] args) {
-        Color blue = Color.BLUE;
+        Color green = Color.GREEN;
+        green.getB();
+
+        Color red = Color.RED;
+        System.out.println(red.ordinal());
+
+        System.out.println(Color.RED == Color.GREEN);
+
         Color[] values = Color.values();
 
-        Color green = Color.valueOf("GREEN");
+        System.out.println(green.name());
 
-        System.out.println(green.getB());
+        Color green1 = Color.valueOf("green".toUpperCase());
     }
 }
