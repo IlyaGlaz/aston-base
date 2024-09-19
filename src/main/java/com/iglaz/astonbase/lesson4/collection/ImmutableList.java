@@ -1,6 +1,5 @@
 package com.iglaz.astonbase.lesson4.collection;
 
-import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
