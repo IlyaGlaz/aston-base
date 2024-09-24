@@ -4,6 +4,7 @@ import com.iglaz.astonbase.lesson5.Employee;
 
 import java.util.Arrays;
 import java.util.Collections;
+import java.util.Comparator;
 import java.util.List;
 
 public class Sorting {
@@ -19,11 +20,19 @@ public class Sorting {
         List<Employee> list = Arrays.asList(
                 new Employee("Zvan", 22),
                 new Employee("Retor", 24),
-                new Employee("Aax", 6));
+                new Employee("Aax", 6)
+        );
 
-        Collections.sort(list, (o1, o2) -> o1.getName().compareTo(o2.getName()));
+        Collections.sort(list, new MyComparator());
 
         System.out.println(list);
+    }
 
+    static class MyComparator implements Comparator<Employee> {
+
+        @Override
+        public int compare(Employee o1, Employee o2) {
+            return o1.getName().compareTo(o2.getName());
+        }
     }
 }

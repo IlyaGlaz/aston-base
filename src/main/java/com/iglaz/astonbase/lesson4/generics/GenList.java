@@ -17,15 +17,15 @@ public class GenList<T> {
         return elements[number];
     }
 
-    static <E> E addOtherElement(E elem) {
-        return elem;
+    public int getSize() {
+        return size;
     }
 
     void sort() {
 
     }
 
-    public int getSize() {
-        return size;
+    public <E extends String> E doSomething(E elem, T second) {
+        return elem;
     }
 }

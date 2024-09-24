@@ -46,6 +46,6 @@ public final class Employee implements Comparable<Employee> {
 
     @Override
     public int compareTo(Employee o) {
-        return this.age - o.age;
+        return age - o.age;
     }
 }

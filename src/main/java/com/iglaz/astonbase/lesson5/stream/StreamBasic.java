@@ -9,10 +9,10 @@ import java.util.List;
 
 public class StreamBasic {
     public static void main(String... args) {
-//        getLowCaloricDishesNamesInJava7(Dish.menu).forEach(System.out::println);
+        getLowCaloricDishesNamesInJava7(Dish.menu).forEach(System.out::println);
 
         // Java 8
-        getLowCaloricDishesNamesInJava8(Dish.menu).forEach(System.out::println);
+//        getLowCaloricDishesNamesInJava8(Dish.menu).forEach(System.out::println);
     }
 
     public static List<String> getLowCaloricDishesNamesInJava7(List<Dish> dishes) {
