@@ -6,13 +6,27 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
 import java.util.List;
+import java.util.function.Predicate;
 
 public class StreamBasic {
     public static void main(String... args) {
-        getLowCaloricDishesNamesInJava7(Dish.menu).forEach(System.out::println);
+
+        List<Dish> dishes = List.of(
+                new Dish("french fries", true, 550, Dish.Type.OTHER),
+                new Dish("pork", false, 800, Dish.Type.MEAT),
+                new Dish("beef", false, 350, Dish.Type.MEAT),
+                new Dish("chicken", false, 400, Dish.Type.MEAT),
+                new Dish("rice", true, 350, Dish.Type.OTHER),
+                new Dish("season fruit", true, 500, Dish.Type.OTHER),
+                new Dish("pizza", true, 550, Dish.Type.OTHER),
+                new Dish("prawns", false, 400, Dish.Type.FISH),
+                new Dish("salmon", false, 450, Dish.Type.FISH)
+        );
+
+        getLowCaloricDishesNamesInJava7(dishes).forEach(System.out::println);
 
         // Java 8
-//        getLowCaloricDishesNamesInJava8(Dish.menu).forEach(System.out::println);
+//        getLowCaloricDishesNamesInJava8(dishes).forEach(System.out::println);
     }
 
     public static List<String> getLowCaloricDishesNamesInJava7(List<Dish> dishes) {
@@ -55,4 +69,27 @@ public class StreamBasic {
     static public boolean some(Dish dish) {
         return true;
     }
+
+    static class MyPredicate implements Predicate<Dish> {
+
+        @Override
+        public boolean test(Dish dish) {
+            return dish.getCalories() < 400;
+        }
+    }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

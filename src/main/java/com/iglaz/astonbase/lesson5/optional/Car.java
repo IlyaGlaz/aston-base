@@ -1,6 +1,6 @@
 package com.iglaz.astonbase.lesson5.optional;
 
-public class Car extends Driver {
+public class Car {
     String model;
 
     public String getModel() {

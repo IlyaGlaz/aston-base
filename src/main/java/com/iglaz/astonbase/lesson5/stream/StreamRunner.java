@@ -1,6 +1,5 @@
 package com.iglaz.astonbase.lesson5.stream;
 
-
 import com.iglaz.astonbase.lesson5.Dish;
 
 import java.util.Optional;

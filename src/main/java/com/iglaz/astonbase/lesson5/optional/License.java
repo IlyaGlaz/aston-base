@@ -1,7 +1,6 @@
 package com.iglaz.astonbase.lesson5.optional;
 
-public class License extends Car {
-    private String model;
+public class License {
     private Car car;
 
     public Car getCar() {
