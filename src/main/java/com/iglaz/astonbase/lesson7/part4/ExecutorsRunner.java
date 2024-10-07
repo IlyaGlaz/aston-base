@@ -15,6 +15,7 @@ public class ExecutorsRunner {
         executorService.submit(() -> {
             try {
                 Thread.sleep(10000);
+                System.out.println(Thread.currentThread().getName());
             } catch (InterruptedException e) {
                 throw new RuntimeException(e);
             }
@@ -23,6 +24,7 @@ public class ExecutorsRunner {
         executorService.submit(() -> {
             try {
                 Thread.sleep(4000);
+                System.out.println(Thread.currentThread().getName());
             } catch (InterruptedException e) {
                 throw new RuntimeException(e);
             }
@@ -31,6 +33,7 @@ public class ExecutorsRunner {
         executorService.submit(() -> {
             try {
                 Thread.sleep(6000);
+                System.out.println(Thread.currentThread().getName());
             } catch (InterruptedException e) {
                 throw new RuntimeException(e);
             }
@@ -39,12 +42,17 @@ public class ExecutorsRunner {
         executorService.submit(() -> {
             try {
                 Thread.sleep(5000);
+                System.out.println(Thread.currentThread().getName());
             } catch (InterruptedException e) {
                 throw new RuntimeException(e);
             }
             System.out.println("4");
         });
         System.out.println("In main");
+
+        Future<Integer> submit = executorService.submit(() -> 1022);
+
+        System.out.println(submit.get());
 
         executorService.shutdown();
     }

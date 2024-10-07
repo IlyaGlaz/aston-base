@@ -14,8 +14,7 @@ public class ListThreadRunner {
     public static void main(String[] args) throws InterruptedException {
         List<Integer> numbers = new CopyOnWriteArrayList<>();
 
-////
-//        Map<Integer, Integer> mapSome = new ConcurrentHashMap<>();
+        Map<Integer, Integer> mapSome = new ConcurrentHashMap<>();
 
         ListThread listThread1 = new ListThread(numbers);
         ListThread listThread2 = new ListThread(numbers);

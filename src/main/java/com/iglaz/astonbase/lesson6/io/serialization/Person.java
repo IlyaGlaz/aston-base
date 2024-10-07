@@ -6,10 +6,9 @@ import java.io.Serializable;
 
 public class Person implements Serializable {
     private static final long serialVersionUID = 1L;
+
     private int age;
-    private  String firstName;
-    private  String secondName;
-    private Person person;
+    private String firstName;
     private Client client;
 
     public Person(int age, String firstName) {
@@ -19,7 +18,6 @@ public class Person implements Serializable {
 
     public Person(int age, Person person, String firstName) {
         this.age = age;
-        this.person = person;
         this.firstName = firstName;
     }
 
@@ -38,8 +36,6 @@ public class Person implements Serializable {
         return "Person{" +
                 "age=" + age +
                 ", firstName='" + firstName + '\'' +
-                ", secondName='" + secondName + '\'' +
-                ", person=" + person +
                 ", client=" + client +
                 '}';
     }

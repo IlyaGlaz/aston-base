@@ -9,6 +9,13 @@ public class NewIOApi {
     public static void main(String[] args) throws IOException {
         Path path = Path.of("resources", "text.txt");
 
+        try (Stream<String> lines = Files.lines(path)) {
+            lines
+                    .map(str -> str.length())
+                    .forEach(System.out::println);
+        }
+
+
 //        System.out.println(Files.readString(path));
 
         try (Stream<String> lines1 = Files.lines(path)) {

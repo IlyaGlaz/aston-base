@@ -23,12 +23,6 @@ public class Sorting {
                 new Employee("Aax", 6)
         );
 
-        List<Employee> list = Arrays.asList(
-                new Employee("Zvan", 22),
-                new Employee("Retor", 24),
-                new Employee("Aax", 6)
-        );
-
         Collections.sort(list, new MyComparator());
 
         System.out.println(list);

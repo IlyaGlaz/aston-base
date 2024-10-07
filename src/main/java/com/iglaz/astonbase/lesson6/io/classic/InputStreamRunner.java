@@ -4,7 +4,6 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.nio.file.Path;
-import java.nio.file.Paths;
 
 public class InputStreamRunner {
     public static void main(String[] args) throws IOException {
@@ -22,7 +21,7 @@ public class InputStreamRunner {
 
             String stringValue = new String(bytes);
             System.out.println(stringValue);
-        } catch(IOException ex) {
+        } catch (IOException ex) {
             System.out.println(ex);
         }
     }
