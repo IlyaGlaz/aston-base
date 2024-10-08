@@ -8,7 +8,7 @@ public class Child extends Parent {
 
     @Override
     void feed(Cat animal) {
-
+        throw new NullPointerException();
         // some logic
     }
 
@@ -77,7 +77,5 @@ public class Child extends Parent {
     @Override
     void findInDB(Long id) throws SQLException {
         Connection connection = DriverManager.getConnection("", "", "");
-
-
     }
 }
