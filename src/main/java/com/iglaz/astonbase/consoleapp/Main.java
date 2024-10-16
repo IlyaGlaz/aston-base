@@ -1,12 +1,13 @@
 package com.iglaz.astonbase.consoleapp;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
 public class Main {
     // Use Scanner for reading input from the user
     Scanner scanner = new Scanner(System.in);
-    List<String> todoList = List.of("Попить кофе", "Выучить Java");
+    List<String> todoList = new ArrayList<>(List.of("Попить кофе", "Выучить Java"));
 
     public static void main(String[] args) {
         Main main = new Main();
@@ -39,7 +40,7 @@ public class Main {
     public void handleMenuChoice(int choice) {
         switch (choice) {
             case 1:
-                // list();
+                list();
                 break;
             case 2:
                 add();
@@ -61,7 +62,12 @@ public class Main {
 
     // реализация всех методов ToDoList
     private void list() {
-
+        if (todoList.isEmpty()) {
+            System.out.println("Пока в вашем списке нет задач");
+        } else {
+            todoList.forEach(System.out::println);
+            separate();
+        }
     }
 
     private void add() {
@@ -72,6 +78,7 @@ public class Main {
             todoList.add(command);
 
             System.out.println("Дело " + command + " успешно добавлено");
+            separate();
         }
     }
 
@@ -81,5 +88,9 @@ public class Main {
 
     private void delete() {
 
+    }
+
+    private void separate() {
+        System.out.println("============================== \n\n");
     }
 }
