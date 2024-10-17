@@ -1,10 +1,16 @@
 package com.iglaz.astonbase.lesson1.figure;
 
 public class Circle {
-    private double radius = 2.44;
+    private double radius;
+    private String name;
+
+    public Circle(double radius, String name) {
+        this.radius = radius;
+        this.name = name;
+    }
 
     public Circle(double radius) {
-        this.radius = radius;
+        this(radius, "Large");
     }
 
     double circumference() {
@@ -13,5 +19,9 @@ public class Circle {
 
     void some() {
         circumference();
+    }
+
+    void makeOlimpicCircles(Circle circle) {
+        System.out.println("Some action");
     }
 }
