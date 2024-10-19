@@ -1,6 +1,8 @@
 package com.iglaz.astonbase.lesson1.figure;
 
 public class Circle {
+    private static final double PI = 3.14;
+
     private double radius;
     private String name;
 
@@ -14,7 +16,7 @@ public class Circle {
     }
 
     double circumference() {
-        return 2 * 3.14 * radius;
+        return 2 * PI * radius;
     }
 
     void some() {
@@ -23,5 +25,9 @@ public class Circle {
 
     void makeOlimpicCircles(Circle circle) {
         System.out.println("Some action");
+    }
+
+    static void some2() {
+
     }
 }

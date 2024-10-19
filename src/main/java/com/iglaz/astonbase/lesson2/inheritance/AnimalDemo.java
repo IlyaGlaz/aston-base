@@ -2,10 +2,18 @@ package com.iglaz.astonbase.lesson2.inheritance;
 
 public class AnimalDemo {
     public static void main(String[] args) {
-        Animal cat = new Cat(22, 44);
+        Cat cat = new Cat(22, 44);
+        Animal ca2 = new Cat(14, 4);
 
-        cat.performEat();
 
-        Swimingable.someStatic();
+        Animal[] zoo = {new Cat(22,44), new Dog(), new Cat(444, 44)};
+
+        for (Animal an : zoo) {
+            an.makeSound();
+        }
+    }
+
+    void some(Animal animal) {
+        animal.makeSound();
     }
 }

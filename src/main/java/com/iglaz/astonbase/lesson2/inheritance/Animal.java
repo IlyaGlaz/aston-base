@@ -2,10 +2,9 @@ package com.iglaz.astonbase.lesson2.inheritance;
 
 import java.util.Objects;
 
-public abstract class Animal {
-    static final String DNK = "XY";
-    private int weight;
-    private int height;
+public class Animal {
+    protected int weight;
+    protected int height;
 
     public Animal() {
         System.out.println("In Animal constructor");
@@ -18,9 +17,13 @@ public abstract class Animal {
         System.out.println("in animal");
     }
 
-    public abstract void makeSound();
+    public void makeSound() {
+        System.out.println("Some sound");
+    }
 
-    public abstract void performEat();
+    public void performEat() {
+        System.out.println("Want to eat");
+    }
 
     public int getWeight() {
         return weight;

@@ -4,6 +4,8 @@ import java.sql.DriverManager;
 
 public class ClassLoadersDemo {
     public static void main(String[] args) {
+        Class<ClassLoadersDemo> clazz = ClassLoadersDemo.class;
+
         System.out.println(Object.class.getClassLoader());
         System.out.println(String.class.getClassLoader());
 

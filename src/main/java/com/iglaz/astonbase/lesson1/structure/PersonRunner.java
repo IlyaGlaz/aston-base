@@ -6,6 +6,6 @@ public class PersonRunner {
 
         Person person = new Person(44, "Ivan");
         Person person2 = new Person(22, "Max");
-
+        Person person3 = new Person(22, "Max");
     }
 }

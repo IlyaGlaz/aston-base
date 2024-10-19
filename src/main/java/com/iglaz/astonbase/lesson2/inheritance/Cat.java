@@ -1,31 +1,22 @@
 package com.iglaz.astonbase.lesson2.inheritance;
 
 public class Cat extends Animal {
-
-    public Cat() {
-        System.out.println("In Cat constructor");
-    }
+    private String color;
 
     public Cat(int weight, int height) {
         super(weight, height);
-        System.out.println("in cat");
+        this.color = color;
+
+        System.out.println("In cat Constructor");
     }
 
     @Override
     public void makeSound() {
-        System.out.println("Mau-Mau" + " " + getHeight());
+        System.out.println("Mur - mur");
     }
 
     @Override
     public void performEat() {
-        System.out.println("Eat mouse");
-    }
-
-    public void play() {
-        System.out.println("Play");
-    }
-
-    static void staticMethod() {
-        System.out.println("CatStatic");
+        System.out.println("fish");
     }
 }

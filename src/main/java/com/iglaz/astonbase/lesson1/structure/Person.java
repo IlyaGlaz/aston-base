@@ -1,8 +1,8 @@
 package com.iglaz.astonbase.lesson1.structure;
 
 public class Person {
-    final private int age;
-    final private String name;
+    private int age;
+    private String name;
     static int counter;
 
     static {
@@ -14,14 +14,13 @@ public class Person {
     }
 
     public Person(int age, String name) {
-        this.age = age;
+        this.age = 22;
         this.name = name;
-        counter++;
 
         System.out.println("In constructor");
     }
 
-    public void sayHello(String str) {
+    public void sayHello() {
         System.out.println("Hey, my name is... " + name);
     }
 
@@ -31,5 +30,25 @@ public class Person {
 
     public static int getCounter() {
         return counter;
+    }
+
+    public int getAge() {
+        return age;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setAge(int age) {
+        if (age < 0) {
+            System.out.println("Ошибка");
+        } else {
+            this.age = age;
+        }
+    }
+
+    public void setName(String name) {
+        this.name = name;
     }
 }
