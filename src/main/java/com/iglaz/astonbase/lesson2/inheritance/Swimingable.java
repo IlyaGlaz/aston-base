@@ -1,16 +1,13 @@
 package com.iglaz.astonbase.lesson2.inheritance;
 
-import javax.imageio.plugins.jpeg.JPEGImageReadParam;
-
-public interface Swimingable {
-    int NUMBER = 22;
-
+public interface Swimingable{
     void swim();
 
     default void someMethod() {
-        System.out.println("aome");
+        System.out.println("Some");
     }
 
-    static void someStatic() {
+    static void staticMethod() {
+        System.out.println();
     }
 }

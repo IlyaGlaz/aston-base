@@ -2,7 +2,9 @@ package com.iglaz.astonbase.lesson2.inheritance;
 
 import java.util.Objects;
 
-public class Animal {
+public abstract class Animal {
+    private static final int CONST = 100;
+
     protected int weight;
     protected int height;
 
@@ -17,13 +19,9 @@ public class Animal {
         System.out.println("in animal");
     }
 
-    public void makeSound() {
-        System.out.println("Some sound");
-    }
+    public abstract void makeSound();
 
-    public void performEat() {
-        System.out.println("Want to eat");
-    }
+    public abstract void performEat();
 
     public int getWeight() {
         return weight;
@@ -34,7 +32,7 @@ public class Animal {
     }
 
     public void setWeight(int weight) {
-        if (weight <= 100) {
+        if (weight <= CONST) {
             this.weight = weight;
         }
     }

@@ -19,4 +19,8 @@ public class Cat extends Animal {
     public void performEat() {
         System.out.println("fish");
     }
+
+    public void runForMouse() {
+        System.out.println("Run");
+    }
 }

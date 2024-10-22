@@ -12,7 +12,7 @@ public final class Client implements Cloneable, Serializable {
 
     public Client(Client client, int age) {
         this.name = client.name;
-        this.age = age;
+        this.age = client.age;
         this.films = new ArrayList<>(client.getFilms());
     }
 

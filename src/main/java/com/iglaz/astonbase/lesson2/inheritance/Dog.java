@@ -1,6 +1,8 @@
 package com.iglaz.astonbase.lesson2.inheritance;
 
-public class Dog extends Animal implements Swimingable {
+import java.io.Serializable;
+
+public class Dog extends Animal implements Swimingable, Serializable {
     @Override
     public void makeSound() {
         System.out.println("Gav-Gav");
@@ -13,6 +15,6 @@ public class Dog extends Animal implements Swimingable {
 
     @Override
     public void swim() {
-        System.out.println("");
+        System.out.println("Swim");
     }
 }
