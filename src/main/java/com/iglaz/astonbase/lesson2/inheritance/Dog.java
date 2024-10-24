@@ -17,4 +17,9 @@ public class Dog extends Animal implements Swimingable, Serializable {
     public void swim() {
         System.out.println("Swim");
     }
+
+    @Override
+    public void someDefault() {
+        Swimingable.super.someDefault();
+    }
 }

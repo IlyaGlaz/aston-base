@@ -10,7 +10,7 @@ public final class Client implements Cloneable, Serializable {
     private final int age;
     private List<String> films = new ArrayList<>();
 
-    public Client(Client client, int age) {
+    public Client(Client client) {
         this.name = client.name;
         this.age = client.age;
         this.films = new ArrayList<>(client.getFilms());
@@ -79,8 +79,8 @@ public final class Client implements Cloneable, Serializable {
         return clone;
     }
 
-    public Client copy(int age) {
-        return new Client(this, age);
+    public Client copy() {
+        return new Client(this);
     }
 }
 

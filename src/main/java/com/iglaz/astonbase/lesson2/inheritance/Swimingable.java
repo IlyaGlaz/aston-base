@@ -1,13 +1,20 @@
 package com.iglaz.astonbase.lesson2.inheritance;
 
-public interface Swimingable{
+public interface Swimingable {
+    int NUMBER = 22;
+
     void swim();
 
-    default void someMethod() {
-        System.out.println("Some");
+    default void someDefault() {
+        System.out.println();
+        somePrivate();
     }
 
-    static void staticMethod() {
-        System.out.println();
+    static void someStatic() {
+
+    }
+
+    private void somePrivate() {
+
     }
 }

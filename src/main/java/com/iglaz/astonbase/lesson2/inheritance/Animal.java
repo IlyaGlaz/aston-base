@@ -4,7 +4,6 @@ import java.util.Objects;
 
 public abstract class Animal {
     private static final int CONST = 100;
-
     protected int weight;
     protected int height;
 

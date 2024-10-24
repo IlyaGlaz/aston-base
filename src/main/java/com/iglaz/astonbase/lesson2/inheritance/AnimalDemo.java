@@ -4,8 +4,6 @@ public class AnimalDemo {
     public static void main(String[] args) {
         Cat cat = new Cat(22, 44);
         Animal cat2 = new Cat(14, 4);
-        cat.runForMouse();
-        cat2.performEat();
 
         Cat cat3 = (Cat) cat2;
         cat3.runForMouse();
@@ -17,9 +15,19 @@ public class AnimalDemo {
                 an2.runForMouse();
             }
         }
+
+        Animal dog = new Dog();
+
+        some(dog);
+
+        Swimingable.someStatic();
     }
 
-    void some(Animal animal) {
+    static void some(Animal animal) {
         animal.makeSound();
+    }
+
+    static void some(Swimingable swimingable) {
+        swimingable.swim();
     }
 }

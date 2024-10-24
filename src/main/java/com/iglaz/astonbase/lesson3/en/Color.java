@@ -3,32 +3,17 @@ package com.iglaz.astonbase.lesson3.en;
 public enum Color implements Some {
     BLUE(22, 44, 44) {
         @Override
-        void someOther() {
-
-        }
-
-        @Override
         public void some() {
 
         }
     },
     GREEN( 0, 4, 0) {
         @Override
-        void someOther() {
-
-        }
-
-        @Override
         public void some() {
 
         }
     },
     RED(44, 44, 4) {
-        @Override
-        void someOther() {
-
-        }
-
         @Override
         public void some() {
 
@@ -44,8 +29,6 @@ public enum Color implements Some {
         this.b = b;
         this.g = g;
     }
-
-    abstract void someOther();
 
     public int getB() {
         return b;

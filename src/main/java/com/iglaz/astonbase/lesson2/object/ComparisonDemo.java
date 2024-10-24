@@ -9,10 +9,13 @@ public class ComparisonDemo {
 
         Client maxim = new Client("Max", 30);
         Client ivan = new Client("Max", 30);
-        Client other = ivan;
 
-//        System.out.println(maxim == ivan);
-        System.out.println(ivan.equals(other));
-        System.out.println(ivan == other);
+        System.out.println(maxim == ivan);
+
+        System.out.println(ivan.equals(maxim));
+
+        Integer num = 23;
+
+//        System.out.println(ivan == other);
     }
 }

@@ -3,17 +3,15 @@ package com.iglaz.astonbase.lesson3.en;
 public class EnumDemo {
     public static void main(String[] args) {
         Color green = Color.GREEN;
-        green.getB();
 
-        Color red = Color.RED;
-        System.out.println(red.ordinal());
+        System.out.println(green.getB());
 
-        System.out.println(Color.RED == Color.GREEN);
+        System.out.println(green);
 
         Color[] values = Color.values();
 
-        System.out.println(green.name());
+        Color blue = Color.valueOf("blue");
 
-        Color green1 = Color.valueOf("green".toUpperCase());
+        green.ordinal();
     }
 }
