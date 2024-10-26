@@ -5,13 +5,14 @@ public class Home {
 
     void printStat() {
         Room room = new Room();
+        room.enter();
     }
 
     class Room {
         // Inner class declaration
         String nameOfTheRoom = "Dorm";
 
-        public void enter() {
+        private void enter() {
             System.out.println(greeting);
         }
     }

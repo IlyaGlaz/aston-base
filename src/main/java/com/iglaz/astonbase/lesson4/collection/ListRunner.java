@@ -2,19 +2,17 @@ package com.iglaz.astonbase.lesson4.collection;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.LinkedList;
 import java.util.List;
 
 public class ListRunner {
     public static void main(String[] args) {
-        Integer[] numbers = new Integer[15];
-        System.out.println(numbers[14]);
+        List<String> friends = new LinkedList<>();
 
-        System.out.println(Arrays.toString(numbers));
-
-        List<String> friends = new ArrayList<>();
+        friends.add(8, "");
 
         // добавить элемент
-        friends.add("sfda");
+        friends.add("");
         friends.add("Sidorov");
         friends.add("Apina");
         friends.add("Sutkin");
@@ -37,8 +35,8 @@ public class ListRunner {
         // удалить элемент
         List<Integer> num = new ArrayList<>();
 
-        System.out.println(num.remove((Integer) 22));
         System.out.println(friends.remove(0));
+        System.out.println(friends.remove("Sutkin"));
         System.out.println(friends);
 
         // замена элемента по индексу
