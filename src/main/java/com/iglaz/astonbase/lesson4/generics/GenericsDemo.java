@@ -2,20 +2,27 @@ package com.iglaz.astonbase.lesson4.generics;
 
 public class GenericsDemo {
     public static void main(String[] args) {
-        AnyList anyList = new AnyList(10);
+//        AnyList anyList = new AnyList(10);
+//
+//        anyList.add("String");
+//        anyList.add(22);
+//        anyList.add(22);
 
-        anyList.add("String");
-        anyList.add(22);
-        anyList.add(22);
+        putSingel(22.2F);
 
-//        String str = (String) anyList.get(1);
-//        str.length();
-//        GenList<Integer> intList = new GenList<>(22);
-//        intList.add(22);
+        putList1(new GenList<Integer>(10));
+
+        putArr(new Integer[]{});
+
     }
 
     // Инварианты
-    static void putList(GenList<? extends Number> list) {
+    static void putList1(GenList<? extends Number> list) {
+
+    }
+
+    // Контравариантность
+    static void putList2(GenList<? super Number> list) {
 
     }
 

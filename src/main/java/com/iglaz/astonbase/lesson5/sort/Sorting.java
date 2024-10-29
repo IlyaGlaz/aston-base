@@ -2,6 +2,7 @@ package com.iglaz.astonbase.lesson5.sort;
 
 import com.iglaz.astonbase.lesson5.Employee;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.Comparator;
@@ -17,13 +18,20 @@ public class Sorting {
 //
 //        ivan.compareTo(max);
 
+        List<String> list1 = new ArrayList<>(List.of("sfsaf", "sdfa"));
+
         List<Employee> list = Arrays.asList(
                 new Employee("Zvan", 22),
                 new Employee("Retor", 24),
                 new Employee("Aax", 6)
         );
 
-        Collections.sort(list, new MyComparator());
+        Collections.sort(list, new Comparator<Employee>() {
+            @Override
+            public int compare(Employee o1, Employee o2) {
+                return o2.getAge() - o1.getAge();
+            }
+        });
 
         System.out.println(list);
     }

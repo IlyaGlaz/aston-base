@@ -7,7 +7,7 @@ import java.util.List;
 
 public class ListRunner {
     public static void main(String[] args) {
-        List<String> friends = new LinkedList<>();
+        List<String> friends = new ArrayList<>();
 
         friends.add(8, "");
 

@@ -58,10 +58,12 @@ public class StreamBasic {
     }
 
     public static List<String> getLowCaloricDishesNamesInJava8(List<Dish> dishes) {
-        dishes.stream()
+        List<String> list = dishes.stream()
                 .filter(dish -> dish.getCalories() < 400)
-                .flatMap(d -> d.getIngredients().stream())
-                .forEach(System.out::println);
+                .peek(dish -> System.out.println(dish))
+                .sorted()
+                .map(Dish::getName)
+                .toList();
 
         return Collections.emptyList();
     }
