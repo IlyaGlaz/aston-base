@@ -25,7 +25,7 @@ public class GenList<T> {
 
     }
 
-    public static <E extends Number> void doSomething(E type) {
-        System.out.println(type.intValue());
+    public static <E extends Number, R> R doSomething(E type) {
+        return (R) Double.valueOf("22.2");
     }
 }

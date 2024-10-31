@@ -18,8 +18,6 @@ public class Sorting {
 //
 //        ivan.compareTo(max);
 
-        List<String> list1 = new ArrayList<>(List.of("sfsaf", "sdfa"));
-
         List<Employee> list = Arrays.asList(
                 new Employee("Zvan", 22),
                 new Employee("Retor", 24),
@@ -29,7 +27,7 @@ public class Sorting {
         Collections.sort(list, new Comparator<Employee>() {
             @Override
             public int compare(Employee o1, Employee o2) {
-                return o2.getAge() - o1.getAge();
+                return o2.getName().compareTo(o1.getName());
             }
         });
 

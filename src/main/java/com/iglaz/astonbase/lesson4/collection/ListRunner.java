@@ -2,14 +2,18 @@ package com.iglaz.astonbase.lesson4.collection;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Iterator;
 import java.util.LinkedList;
 import java.util.List;
+import java.util.Map;
+import java.util.Set;
 
 public class ListRunner {
     public static void main(String[] args) {
         List<String> friends = new ArrayList<>();
 
-        friends.add(8, "");
+        List<String> list = List.of("Str", "Str2", "Str3");
+        list.add("");
 
         // добавить элемент
         friends.add("");
@@ -17,6 +21,13 @@ public class ListRunner {
         friends.add("Apina");
         friends.add("Sutkin");
         friends.add("Frodo");
+
+        Iterator<String> iterator = friends.iterator();
+
+        while(iterator.hasNext()) {
+            String next = iterator.next();
+            friends.remove(next);
+        }
 
         System.out.println(friends.size());
 

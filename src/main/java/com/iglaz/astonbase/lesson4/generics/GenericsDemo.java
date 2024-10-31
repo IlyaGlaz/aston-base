@@ -7,17 +7,23 @@ public class GenericsDemo {
 //        anyList.add("String");
 //        anyList.add(22);
 //        anyList.add(22);
+//
+//        String o = (String) anyList.get(1);
+//        o.length();
 
-        putSingel(22.2F);
+        GenList<Double> genList = new GenList<>(10);
+        genList.add(22.2);
 
-        putList1(new GenList<Integer>(10));
+        putSingel(22.2);
 
-        putArr(new Integer[]{});
+        putList2(new GenList<Object>(10));
+
+        putArr(new Double[]{});
 
     }
 
     // Инварианты
-    static void putList1(GenList<? extends Number> list) {
+    static void putList1(GenList<Number> list) {
 
     }
 
