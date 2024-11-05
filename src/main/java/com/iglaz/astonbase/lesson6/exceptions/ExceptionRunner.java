@@ -5,21 +5,10 @@ import java.io.FileNotFoundException;
 public class ExceptionRunner {
     public static void main(String[] args) {
         System.out.println("Before");
-
-        processingInput(0);
-
-        try {
-
-            dangerMethod();
-
-        } catch (InterruptedException | FileNotFoundException ex) {
-
-        } catch (Exception ex) {
-
-        } finally {
-
-        }
-
+//
+//        String str = null;
+//        str.length();
+//
         System.out.println("After");
     }
 

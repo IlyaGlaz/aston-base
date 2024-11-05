@@ -1,30 +1,23 @@
 package com.iglaz.astonbase.lesson5.optional;
 
-import java.util.Optional;
-
 public class OptionalDemo {
     public static void main(String[] args) {
         Driver driver = new Driver();
 
         System.out.println(getModelOfCar(driver));
     }
-
     static String getModelOfCar(Driver driver) {
-        Optional<Car> maybeModel = Optional.of(driver)
-                .map(driver1 -> driver1.getLicense())
-                .map(license -> license.getCar());
+        Optional<Car> car = Optional.of(driver)
+                .map(d -> d.getLicense())
+                .map(l -> l.getCar());
 
-//        String model = "";
-//        if (maybeModel.isPresent()) {
-//            model = maybeModel.get();
-//        }
+        Car mers = car.orElse(new Car());
 
-        maybeModel.ifPresent(car -> car.setModel("Mers"));
+        Car car2 = car.orElseThrow();
 
-//        return maybeModel.orElse(null);
+        car.ifPresent(c -> c.setModel("BMW"));
 
-//        return maybeModel.orElseThrow();
 
-        return maybeModel.map(Car::getModel).orElse("");
+        return "";
     }
 }

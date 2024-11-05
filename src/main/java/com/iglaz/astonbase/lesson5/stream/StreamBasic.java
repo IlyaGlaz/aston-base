@@ -7,6 +7,7 @@ import java.util.Collections;
 import java.util.Comparator;
 import java.util.List;
 import java.util.function.Predicate;
+import java.util.stream.Stream;
 
 public class StreamBasic {
     public static void main(String... args) {
@@ -23,10 +24,14 @@ public class StreamBasic {
                 new Dish("salmon", false, 450, Dish.Type.FISH)
         );
 
-        getLowCaloricDishesNamesInJava7(dishes).forEach(System.out::println);
+//        getLowCaloricDishesNamesInJava7(dishes).forEach(System.out::println);
 
-        // Java 8
+//         Java 8
 //        getLowCaloricDishesNamesInJava8(dishes).forEach(System.out::println);
+
+        Stream.of("zzz", "ffff", "aaaa")
+                .peek(s -> System.out.println(s))
+                .forEach(s -> System.out.println(s));
     }
 
     public static List<String> getLowCaloricDishesNamesInJava7(List<Dish> dishes) {
@@ -58,26 +63,27 @@ public class StreamBasic {
     }
 
     public static List<String> getLowCaloricDishesNamesInJava8(List<Dish> dishes) {
-        List<String> list = dishes.stream()
-                .filter(dish -> dish.getCalories() < 400)
-                .peek(dish -> System.out.println(dish))
-                .sorted()
-                .map(Dish::getName)
-                .toList();
+        Predicate<Dish> pred = dish -> {
+            System.out.println(dish);
+            return dish.getCalories() < 300;
+        };
+
+       dishes.stream()
+                .filter(dish -> dish.getCalories() < 300)
+                .sorted((d1, d2) -> d1.getCalories() - d2.getCalories())
+                .flatMap(dish -> dish.getIngredients().stream())
+                .forEach(name -> System.out.println(name));
 
         return Collections.emptyList();
-    }
-
-    static public boolean some(Dish dish) {
-        return true;
     }
 
     static class MyPredicate implements Predicate<Dish> {
 
         @Override
         public boolean test(Dish dish) {
-            return dish.getCalories() < 400;
+            return dish.getCalories() < 100;
         }
+
     }
 }
 
