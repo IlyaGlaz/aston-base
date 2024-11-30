@@ -1,7 +1,9 @@
 package com.iglaz.astonbase.lesson5.homework;
 
 import java.util.Arrays;
+import java.util.Comparator;
 import java.util.List;
+import java.util.stream.Collectors;
 
 public class PuttingIntoPractice {
 
@@ -19,5 +21,55 @@ public class PuttingIntoPractice {
                 new Transaction(mario, 2012, 700),
                 new Transaction(alan, 2012, 950)
         );
+        //1. Найти все транзакции за 2011 год и отсортировать их по сумме (от меньшей
+        // к большей).
+        transactions.stream()
+                .filter(x -> x.getYear() == 2011)
+                .sorted(Comparator.comparingInt(Transaction::getValue))
+                .forEach(System.out::println);
+
+        //2. Вывести список неповторяющихся городов, в которых работают трейдеры.
+        transactions.stream()
+                .map(x->x.getTrader().getCity())
+                .distinct()
+                .forEach(System.out::println);
+
+        //3. Найти всех трейдеров из Кембриджа и отсортировать их по именам.
+        transactions.stream()
+                .map(Transaction::getTrader)
+                .distinct()
+                .filter(x->x.getCity().equals("Cambridge"))
+                .map(Trader::getName)
+                .sorted()
+                .forEach(System.out::println);
+
+        //4. Вернуть строку со всеми именами трейдеров, отсортированными в алфавитном
+        //порядке.
+        System.out.println(transactions.stream()
+                .map(x -> x.getTrader().getName())
+                .distinct()
+                .sorted()
+                .collect(Collectors.joining(", ")));
+
+        //5. Выяснить, существует ли хоть один трейдер из Милана.
+        System.out.println(transactions.stream()
+                .anyMatch(x -> x.getTrader().getCity().equals("Milan")));
+
+        //6. Вывести суммы всех транзакций трейдеров из Кембриджа.
+        System.out.println(transactions.stream()
+                .filter(x -> x.getTrader().getCity().equals("Cambridge"))
+                .map(Transaction::getValue)
+                .reduce(Integer::sum).get());
+
+        //7. Какова максимальная сумма среди всех транзакций?
+        System.out.println(transactions.stream()
+                .map(Transaction::getValue)
+                .reduce(Integer::max).get());
+
+        //8. Найти транзакцию с минимальной суммой.
+        System.out.println(transactions.stream()
+                .min(Comparator.comparingInt(Transaction::getValue)).get());
+
+
     }
 }
